@@ -1,14 +1,14 @@
 const images = [
-  { src: '/IMG_5893 1.png', className: 'col-start-1 col-span-4 row-start-1 row-span-4' },
-  { src: '/WhatsApp Image 2025-05-06 at 9.46.58 AM 1.png', className: 'col-start-5 col-span-4 row-start-1 row-span-4' },
-  { src: '/IMG_0412 1.png', className: 'col-start-9 col-span-4 row-start-1 row-span-4' },
-  { src: '/IMG_0999.png', className: 'col-start-1 col-span-3 row-start-5 row-span-3' },
-  { src: '/IMG_4695 1.png', className: 'col-start-4 col-span-6 row-start-5 row-span-5' },
-  { src: '/IMG_1373 1.png', className: 'col-start-10 col-span-3 row-start-5 row-span-5' },
-  { src: '/IMG_6499 1.png', className: 'col-start-1 col-span-3 row-start-8 row-span-5' },
-  { src: '/IMG_2808 1.png', className: 'col-start-4 col-span-3 row-start-10 row-span-3' },
-  { src: '/IMG_0705 1.png', className: 'col-start-7 col-span-3 row-start-10 row-span-3' },
-  { src: '/IMG_6416 1.png', className: 'col-start-10 col-span-3 row-start-10 row-span-3' },
+  { src: 'team/IMG_5893 1.png', className: 'col-start-1 col-span-4 row-start-1 row-span-4' },
+  { src: 'team/WhatsApp Image 2025-05-06 at 9.46.58 AM 1.png', className: 'col-start-5 col-span-4 row-start-1 row-span-4' },
+  { src: 'team/IMG_0412 1.png', className: 'col-start-9 col-span-4 row-start-1 row-span-4' },
+  { src: 'team/IMG_0999.png', className: 'col-start-1 col-span-3 row-start-5 row-span-3' },
+  { src: 'team/IMG_4695 1.png', className: 'col-start-4 col-span-6 row-start-5 row-span-5' },
+  { src: 'team/IMG_1373 1.png', className: 'col-start-10 col-span-3 row-start-5 row-span-5' },
+  { src: 'team/IMG_6499 1.png', className: 'col-start-1 col-span-3 row-start-8 row-span-5' },
+  { src: 'team/IMG_2808 1.png', className: 'col-start-4 col-span-3 row-start-10 row-span-3' },
+  { src: 'team/IMG_0705 1.png', className: 'col-start-7 col-span-3 row-start-10 row-span-3' },
+  { src: 'team/IMG_6416 1.png', className: 'col-start-10 col-span-3 row-start-10 row-span-3' },
 ];
 
 export const BehindTheScenes = () => {

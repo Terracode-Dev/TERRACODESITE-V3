@@ -21,7 +21,7 @@ const Hero = () => {
         
         <div className="relative rounded-3xl h-[31vh] md:h-[70vh] w-full overflow-hidden mt-10">
         {/* Image */}
-        <img src="/career.jpg" alt="" className="object-cover w-full h-full" />
+        <img src="/career/career.jpg" alt="" className="object-cover w-full h-full" />
 
         {/* Black bottom-to-top gradient overlay */}
         <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"></div>

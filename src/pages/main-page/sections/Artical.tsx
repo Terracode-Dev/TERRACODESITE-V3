@@ -20,7 +20,7 @@ const Articles = () => {
       description: 'Discover how AI is accelerating workflows, reducing bugs, and transforming the developer experience - and what it means for your next project.',
       likes: 92,
       comments: 6,
-      image: '/Mask group.png',
+      image: 'article/Mask group.png',
     },
     {
       id: '2',
@@ -29,7 +29,7 @@ const Articles = () => {
       description: 'As automation rises, human-centered design matters more than ever. Here\'s how we balance AI logic with user empathy.',
       likes: 192,
       comments: 4,
-      image: '/Mask group (1).png'
+      image: 'article/Mask group (1).png'
     },
     {
       id: '3',
@@ -38,7 +38,7 @@ const Articles = () => {
       description: 'Diversity of thought in design teams fosters creativity and innovation, leading to better user experiences.',
       likes: 220,
       comments: 4,
-      image: '/Mask group (2).png'
+      image: 'article/Mask group (2).png'
     },
     {
       id: '4',
@@ -47,7 +47,7 @@ const Articles = () => {
       description: 'Exploring eco-friendly materials and methods in design to create a more sustainable future for industry and planet.',
       likes: 180,
       comments: 4,
-      image: '/Mask group (3).png'
+      image: 'article/Mask group (3).png'
     },
     {
       id: '5',
@@ -56,13 +56,13 @@ const Articles = () => {
       description: 'As we innovate, it\'s crucial to ensure that our designs are inclusive and accessible to all users, regardless of ability.',
       likes: 210,
       comments: 4,
-      image: '/Mask group (4).png'
+      image: 'article/Mask group (4).png'
     }
   ];
 
   return (
 
-    <div className="px-4 md:px-0 bg-black text-white py-2 font-lufga mt-10 xl:mt-20 ">
+    <div className="px-4  bg-black text-white py-2 font-lufga mt-10 xl:mt-20 ">
 
       <div className="container mx-auto">
         {/* Header */}

@@ -53,28 +53,28 @@ export default function OurClients() {
   const clients =[
     {
       name:"Nomin",
-      image: "Mask group (2).png",
+      image: "employee/IMG_1158.PNG",
       position: "CEO",
       comment: "Terracode's team transformed our operations with their AI solutions. Their expertise is unmatched.",
       rate: 2
     },
     {
       name:"Nomin",
-      image: "Mask group (2).png",
+      image: "employee/IMG_1158.PNG",
       position: "CEO",
       comment: "Terracode's team transformed our operations with their AI solutions. Their expertise is unmatched.",
       rate: 5
     },
     {
       name:"Nomin",
-      image: "Mask group (2).png",
+      image: "employee/IMG_1158.PNG",
       position: "CEO",
       comment: "Terracode's team transformed our operations with their AI solutions. Their expertise is unmatched.",
       rate: 5
     },
     {
       name:"Nomin",
-      image: "Mask group (2).png",
+      image: "employee/IMG_1158.PNG",
       position: "CEO",
       comment: "Terracode's team transformed our operations with their AI solutions. Their expertise is unmatched.",
       rate: 5

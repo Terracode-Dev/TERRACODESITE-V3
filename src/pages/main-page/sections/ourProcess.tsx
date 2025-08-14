@@ -5,19 +5,19 @@ import ProcessCardItem from "@/components/processCard"
 
 const imageData = [
   {
-    imageSrc: "Vector.svg",
+    imageSrc: "/processcard/Vector.svg",
     cl: "absolute top-[0px] left-[195px] w-[170px] opacity-[0.4] mix-blend-overlay"
   },
   {
-    imageSrc: "2.svg",
+    imageSrc: "/processcard/2.svg",
     cl: "absolute top-[0px] left-[185px] w-[280px] opacity-[0.4] mix-blend-overlay"
   },
   {
-    imageSrc: "3.svg",
+    imageSrc: "/processcard/3.svg",
     cl: "absolute top-[0px] left-[130px] w-[295px] opacity-[0.4] mix-blend-overlay"
   },
   {
-    imageSrc: "4.svg",
+    imageSrc: "/processcard/4.svg",
     cl: "absolute top-[0px] left-[120px] w-[320px] opacity-[0.4] mix-blend-overlay"
   },
 ]
@@ -26,22 +26,22 @@ const ProcessCardData = [
   {
     title: "Discover",
     description: "We kick things off by understanding your business goals, target users, and challenges. Through stakeholder calls, market research, and technical discovery, we lay the foundation for a successful build.",
-    img: "/compass-96.png",
+    img: "mainicons/compass-96.png",
   },
   {
     title: "Design",
     description: "We bring ideas to life through user flows, wireframes, and high fidelity UI designs. Expect collaborative feedback loops, modern design systems, and pixel perfect prototypes.",
-    img: "/icon-drawing-96.png",
+    img: "mainicons/icon-drawing-96.png",
   },
   {
     title: "Develop",
     description: "Our engineers write scalable, secure code using the latest tech stacks and integrate AI tools where needed all following agile sprints and weekly demos.",
-    img: "/source-code-96.png",
+    img: "mainicons/source-code-96.png",
   },
   {
     title: "Deliver & Support",
     description: "After rigorous QA and user testing, we deploy to production. We stay with you post-launch for monitoring, iteration, and growth support.",
-    img: "/handshake-96.png",
+    img: "mainicons/handshake-96.png",
   },
 ]
 

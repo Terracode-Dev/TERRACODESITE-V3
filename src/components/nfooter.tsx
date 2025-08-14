@@ -8,7 +8,7 @@ export default function Footer() {
     {/* Dextop View     */}
     <div className="hidden md:grid md:grid-cols-4 font-lufga container mx-auto">
         <div className="flex flex-col px-4 gap-4 items-start justify-start">
-            <img className="w-[102px] h-[65px] object-cover" alt="" src="Frame 9.png" />
+            <img className="w-[102px] h-[65px] object-cover" alt="" src="hero/Frame 9.png" />
              <a className=" [text-decoration:underline]  font-semibold text-wrap " href="mailto:contact@terracodedev.com" target="_blank">contact@terracodedev.com</a>
              <TerraButton/>
         </div>
@@ -66,7 +66,7 @@ export default function Footer() {
     {/* Mobile View */}
     <div className="flex flex-col md:hidden  gap-4 items-center justify-center font-lufga">
         <div className="flex flex-col items-center justify-center gap-4">
-            <img className="w-[130px] object-cover" alt="" src="Frame 9.png" />
+            <img className="w-[130px] object-cover" alt="" src="hero/Frame 9.png" />
             <a className="relative [text-decoration:underline] tracking-[0.04px] leading-6 font-semibold  text-[inherit]" href="mailto:contact@terracodedev.com" target="_blank">contact@terracodedev.com</a>
         </div>
         <div className="flex flex-row">

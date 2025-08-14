@@ -7,7 +7,7 @@ export default function Article() {
       {/* Author Info */}
       <div className="flex items-center space-x-4 mb-8">
         <img
-          src="/team.png"
+          src="employee/IMG_1158.PNG"
           alt="Author"
           className="w-14 h-14 rounded-full object-cover"
         />

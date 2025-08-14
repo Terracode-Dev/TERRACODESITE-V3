@@ -35,31 +35,31 @@ export default function Awards() {
       id: 1,
       title: "Best Research",
       date: "January 2025",
-      image: "image 33.png"
+      image: "/mainawards/image 33.png"
     },
     {
       id: 2,
       title: "Innovation Award",
       date: "March 2024",
-      image: "image 33.png"
+      image: "/mainawards/image 33.png"
     },
     {
       id: 3,
       title: "Excellence in Technology",
       date: "June 2023",
-      image: "image 33.png"
+      image: "/mainawards/image 33.png"
     },
     {
       id: 3,
       title: "Excellence in Technology",
       date: "June 2023",
-      image: "image 33.png"
+      image: "/mainawards/image 33.png"
     },
     {
       id: 3,
       title: "Excellence in Technology",
       date: "June 2023",
-      image: "image 33.png"
+      image: "/mainawards/image 33.png"
     }
   ];
 

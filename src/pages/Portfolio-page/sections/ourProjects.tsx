@@ -7,7 +7,7 @@ const projects = [
         description: "A modern website for House Of Vision (Pvt) Ltd. ",
         id: "1",
         category: "Development",
-        img: "/HOV Mockup.png"
+        img: "/portfolio/HOV Mockup.png"
     },
     {
 
@@ -15,7 +15,7 @@ const projects = [
         description: "A modern website for Inpro Industries (Pvt) Ltd. ",
         id: "2",
         category: "Development",
-        img: "/inpro Mockup.png"
+        img: "/portfolio/inpro Mockup.png"
     },
     {
 
@@ -23,7 +23,7 @@ const projects = [
         description: "Platform for booking single tickets for entire journeys in Transport Services.",
         id: "3",
         category: "Development",
-        img: "/transit.png"
+        img: "/portfolio/transit.png"
     },
     
     {
@@ -31,28 +31,28 @@ const projects = [
         description: "CMS for a Cleaning Service Provider",
         id: "4",
         category: "System",
-        img: "/CMS.png"
+        img: "/portfolio/CMS.png"
     },
     {
         title: "Data Management System",
         description: "Intelligent DMS for city-wide data with advanced storage, analytics, and user management.",
         id: "5",
         category: "System",
-        img: "/polls.png"
+        img: "/portfolio/polls.png"
     },
     {
         title: "Mobile App Design & Development",
         description: "Mobile application for searching for lawyers and attorneys.",
         id: "6",
         category: "Mobile",
-        img: "/mobileapp.png"
+        img: "/portfolio/mobileapp.png"
     },
     {
         title: "Inventory Management System",
         description: "Inventory management system for House Of Vision (Pvt) Ltd.",
         id: "7",
         category: "System",
-        img: "/hovims.png"
+        img: "/portfolio/hovims.png"
     },
     
 ]

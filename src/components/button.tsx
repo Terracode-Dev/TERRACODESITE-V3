@@ -14,7 +14,7 @@ type TerraButtonProps = {
 
 const TerraButton: React.FC<TerraButtonProps> = ({
   label = 'Talk to Us',
-  iconSrc = '/Arrow.svg',
+  iconSrc = '/button/Arrow.svg',
   onClick,
   type = 'button',
   className = '',

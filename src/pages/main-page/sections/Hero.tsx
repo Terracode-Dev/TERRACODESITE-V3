@@ -36,7 +36,7 @@ const stack = [
   },
   {
     name: "Item 4",
-    image: "/logo/flutter.png"
+    image: "/logo/flutter.svg"
   }
 ]
 
@@ -64,7 +64,7 @@ const HeroSection: React.FC = () => {
 
   return (
     
-    <div className="relative w-screen  left-1/2 right-1/2 -ml-[51vw] -mr-[50vw] overflow-hidden font-lufga pr-4 pl-10 ">
+    <div className="relative   overflow-hidden font-lufga  ">
       {/* Background Video */}
       <video
         ref={videoRef}
@@ -81,8 +81,8 @@ const HeroSection: React.FC = () => {
                 e.currentTarget.playbackRate = 0.4; // 75% speed
             }}
       >
-        <source src="/Hero.mp4" type="video/mp4" />
-        <source src="/Hero.webm" type="video/webm" />
+        <source src="hero/Hero.mp4" type="video/mp4" />
+        <source src="hero/Hero.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
 
@@ -94,7 +94,7 @@ const HeroSection: React.FC = () => {
        <Navbar/> 
        </div>
       {/* Content */}
-      <div className="hidden relative z-20 lg:grid grid-cols-4 gap-4 items-center justify-center mt-5 xl:px-4 py-8 xl:container mx-auto">
+      <div className="hidden relative z-20 lg:grid grid-cols-4 gap-4 items-center justify-center mt-5 xl:px-4 py-8 xl:container mx-auto px-4">
         <div className="col-span-1 flex flex-col justify-start items-start gap-4">
             <div className="relative max-w-md w-full text-white">
               <div className="backdrop-blur-md bg-white/10 rounded-full p-6 shadow-lg flex justify-center items-center flex-row overflow-hidden relative">
@@ -108,7 +108,7 @@ const HeroSection: React.FC = () => {
             <Link to="/articles" className="text-white">
             <div className=" backdrop-blur-sm bg-white/10  rounded-2xl p-8 max-w-md w-full text-white shadow-lg">
                 <h1 className="text-3xl  mb-4">Latest Articles & News</h1>
-                <img className="object-cover w-full h-full mb-4 rounded-md" src="/Mask group (1).png" alt="Vector" />
+                <img className="object-cover w-full h-full mb-4 rounded-md" src="article/Mask group (1).png" alt="Vector" />
                 <h1 className="text-lg">
                     Fueled by Passion. Built for Impact.
                 </h1>
@@ -221,8 +221,12 @@ const HeroSection: React.FC = () => {
             </ScrollingEffect>
         </div>
       </div>
+
+
+
+      {/* Mobile view */}
        <div className=" relative z-20 lg:hidden gap-4 items-center justify-center   py-4">
-        <div className=" flex flex-col  gap-4 ">
+        <div className=" flex flex-col  gap-4 px-4">
             <div className=" backdrop-blur-md bg-white/10  rounded-full max-w-md p-4 w-fit text-white shadow-lg flex justify-start items-start flex-row">
                 <Rocket className="w-4 h-4 text-[#fd630a] mr-4" />
                 <h1 className="text-sm text-nowrap ">AI-first digital experiences.</h1>
@@ -256,6 +260,9 @@ const HeroSection: React.FC = () => {
                 <div className=" bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
           </div>
         </div>
+        
+            </div>
+        </div>
         <div className="col-span-3 flex flex-row">
             <ScrollingEffect
               ref={scrollRef}
@@ -279,8 +286,6 @@ const HeroSection: React.FC = () => {
               ))}
             </div>
             </ScrollingEffect>
-        </div>
-            </div>
         </div>
        </div>
     </div>

@@ -3,8 +3,16 @@ import TerraButton from "./button";
 import { useNavigate ,Link } from "@tanstack/react-router";
 
 
+const isChristmasSeason = () => {
+  const today = new Date();
+  const month = today.getMonth(); 
+  const day = today.getDate();
+  return month === 11 && day >= 10 && day <= 31;
+};
+
 export default function Footer() {
     const navigate = useNavigate();
+    const showChristmas = isChristmasSeason();
 
     const handleClick = () => {
   navigate({ to: '/contact' }) // e.g., '/about', '/dashboard', etc.
@@ -14,7 +22,8 @@ export default function Footer() {
     {/* Dextop View     */}
     <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 font-lufga container mx-auto space-y-10 lg:space-y-0">
         <div className="flex flex-col px-4 gap-4  items-start justify-start ">
-            <img className="w-[102px] h-[65px] object-cover" alt="" src="hero/Frame 9.png" />
+            {/* <img className="w-[102px] h-[65px] object-cover" alt="" src="hero/Frame 9.png" /> */}
+            <img className={showChristmas? "relative -top-3 w-[130px] h-[88px] object-cover" :"w-[102px] h-[65px] object-cover"} alt="Logo" src={showChristmas ? "hero/chrilogo.png" : "hero/Frame 9.png"} />
              <a className=" [text-decoration:underline]  font-semibold text-wrap" href="mailto:contact@terracodedev.com" target="_blank">contact@terracodedev.com</a>
              <TerraButton onClick={handleClick}/>
         </div>
@@ -100,7 +109,8 @@ export default function Footer() {
     {/* Mobile View */}
     <div className="flex flex-col md:hidden  gap-4 items-center justify-center font-lufga mt-6">
         <div className="flex flex-col items-center justify-center gap-4">
-            <img className="w-[130px] object-cover" alt="" src="hero/Frame 9.png" />
+            {/* <img className="w-[130px] object-cover" alt="" src="hero/Frame 9.png" /> */}
+            <img className={showChristmas? "relative -top-3 w-[170px]  object-cover" :"w-[130px] object-cover"} alt="Logo" src={showChristmas ? "hero/chrilogo.png" : "hero/Frame 9.png"} />
             <a className="relative [text-decoration:underline] tracking-[0.04px] leading-6 font-semibold  text-[inherit]" href="mailto:contact@terracodedev.com" target="_blank">contact@terracodedev.com</a>
         </div>
         <div className="flex flex-row">

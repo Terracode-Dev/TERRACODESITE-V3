@@ -3,6 +3,13 @@ import { useState, useEffect, useRef } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
+// const isChristmasSeason = () => {
+//   const today = new Date();
+//   const month = today.getMonth(); 
+//   const day = today.getDate();
+//   return month === 11 && day >= 10 && day <= 31;
+// };
+
 const navbar = {
   links: [
     { name: 'Home', path: '/' },
@@ -36,6 +43,8 @@ export default function Navbar() {
   const toggleDropdown = () => setIsDropdownOpen((o) => !o)
   const toggleMobileDropdown = () => setIsMobileDropdownOpen((o) => !o)
 
+  // const showChristmas = isChristmasSeason();
+
   // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -64,7 +73,8 @@ export default function Navbar() {
       {/* Desktop & Mobile Navbar */}
       <div className="w-full relative flex items-center justify-between px-4 sm:px-8 lg:px-[60px] text-xl font-lufga container mx-auto">
         <Link to="/">
-          <img className="w-20 h-12 sm:w-[102px] sm:h-[65px]" alt="Logo" src="hero/Frame 9.png" />
+          {/* <img className={showChristmas? "relative w-20 h-14 sm:w-[135px] sm:h-[90px] -top-3" :"w-20 h-12 sm:w-[102px] sm:h-[65px]"} alt="Logo" src={showChristmas ? "hero/chrilogo.png" : "hero/Frame 9.png"} /> */}
+          <img className="w-20 h-12 sm:w-[102px] sm:h-[65px]" alt="Logo" src= "hero/Frame 9.png" />
         </Link>
 
         {/* Desktop Menu */}

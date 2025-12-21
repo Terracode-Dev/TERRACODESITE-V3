@@ -17,7 +17,7 @@ const navbar = {
     { name: 'Partnerships', path: '/partnerships' },
     { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' },
-    { name: 'Career', path: '/career' },
+    // { name: 'Career', path: '/career' },
     { name: 'Portfolio', path: '/digitalportfolio' },
     // { name: 'Pricing', path: '/pricing' },
     

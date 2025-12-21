@@ -9,7 +9,7 @@ import { CookieBanner } from '@/components/CookieFile'
 import NotFound from '@/components/NotFound'
 import Navbar from '@/components/navbar'
 import { ScrollToTop } from '@/components/scrolltop'
-import SnowFlowerEffect  from '@/components/snow/snow-effect'
+import Snowfall from '@/components/snow/snow-effect'
 
 
 const isChristmasSeason = () => {
@@ -38,7 +38,7 @@ export const Route = createRootRoute({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {showChristmas &&<SnowFlowerEffect />}
+            {showChristmas &&<Snowfall />}
             <ScrollToTop/>
             <CookieBanner />
             {/* <Navbar /> */}

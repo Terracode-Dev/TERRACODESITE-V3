@@ -11,10 +11,10 @@ interface FormData {
   package: string;
   businessName: string;
   businessStage: string;
-  website: string;       // optional
+  website: string;
   meetingDate: string;
   message: string;
-  notes: string;         // optional
+  notes: string;
 }
 
 interface InquireProps {
@@ -55,7 +55,6 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
   const handleScroll = () => {
     if (scrollRef.current) {
       const { scrollTop, scrollHeight, clientHeight } = scrollRef.current;
-      // If user scrolls within 5px from bottom, consider it "bottom"
       if (Math.ceil(scrollTop + clientHeight) >= scrollHeight - 5) {
         setIsAtBottom(true);
       } else {
@@ -78,7 +77,6 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
       message,
     } = formData;
 
-    // Validate required fields
     if (
       !firstName ||
       !email ||
@@ -108,7 +106,6 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
 
       showToast("Thank you! Your message has been sent successfully.", "success");
 
-      // Reset form
       setFormData({
         firstName: "",
         email: "",
@@ -142,7 +139,7 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
           {/* Heading */}
           <div className="space-y-2 mb-10">
             <h2 className="text-3xl md:text-4xl lg:text-5xl text-[#FDA10A] font-light">
-              Let’s Talk About Your Business
+              Let's Talk About Your Business
             </h2>
             <p className="text-[#A4A4A4] text-md md:text-lg lg:text-xl font-light max-w-3xl">
               Share a few details and choose a convenient date. Our team will review your request and
@@ -244,42 +241,65 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
             {/* Meeting Date */}
             <div className="flex flex-col space-y-4">
               <label className="text-white text-xl font-medium">Preferred Meeting Date</label>
-              
+
               <button
                 type="button"
                 onClick={() => setShowCalendar(!showCalendar)}
-                className={`w-full px-4 py-3 bg-neutral-800 border rounded-xl text-left flex items-center justify-between transition-all duration-300 ${
-                  showCalendar ? "border-[#f56d04] ring-2 ring-[#f56d04]" : "border-neutral-700 hover:border-neutral-500"
-                }`}
+                className={`w-full px-4 py-3 bg-neutral-800 border rounded-xl text-left flex items-center justify-between transition-all duration-300 ${showCalendar
+                  ? "border-[#f56d04] ring-2 ring-[#f56d04]"
+                  : "border-neutral-700 hover:border-neutral-500"
+                  }`}
               >
                 <span className={formData.meetingDate ? "text-white" : "text-gray-400"}>
-                  {formData.meetingDate ? (() => {
-                    const [year, month, day] = formData.meetingDate.split('-');
-                    return new Date(Number(year), Number(month) - 1, Number(day)).toLocaleDateString('en-US', { weekday: 'short', month: 'long', day: 'numeric', year: 'numeric' });
-                  })() : "Select a date"}
+                  {formData.meetingDate
+                    ? (() => {
+                      const [year, month, day] = formData.meetingDate.split("-");
+                      return new Date(
+                        Number(year),
+                        Number(month) - 1,
+                        Number(day)
+                      ).toLocaleDateString("en-US", {
+                        weekday: "short",
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                      });
+                    })()
+                    : "Select a date"}
                 </span>
                 <CalendarIcon className="w-5 h-5 text-gray-400" />
               </button>
 
+              {/* ✅ Hidden input so EmailJS can read meetingDate from the DOM */}
+              <input
+                type="hidden"
+                name="meetingDate"
+                value={formData.meetingDate}
+              />
+
               {showCalendar && (
-                <Calendar 
+                <Calendar
                   isPopup
-                  value={formData.meetingDate ? (() => {
-                    const [year, month, day] = formData.meetingDate.split('-');
-                    return new Date(Number(year), Number(month) - 1, Number(day));
-                  })() : null}
+                  value={
+                    formData.meetingDate
+                      ? (() => {
+                        const [year, month, day] = formData.meetingDate.split("-");
+                        return new Date(Number(year), Number(month) - 1, Number(day));
+                      })()
+                      : null
+                  }
                   onApply={(date) => {
                     const year = date.getFullYear();
-                    const month = String(date.getMonth() + 1).padStart(2, '0');
-                    const day = String(date.getDate()).padStart(2, '0');
+                    const month = String(date.getMonth() + 1).padStart(2, "0");
+                    const day = String(date.getDate()).padStart(2, "0");
                     setFormData((prev) => ({
                       ...prev,
-                      meetingDate: `${year}-${month}-${day}`
+                      meetingDate: `${year}-${month}-${day}`,
                     }));
                     setShowCalendar(false);
                   }}
                   onClose={() => setShowCalendar(false)}
-                  minDate={new Date(new Date().setHours(0,0,0,0))}
+                  minDate={new Date(new Date().setHours(0, 0, 0, 0))}
                 />
               )}
             </div>
@@ -333,7 +353,10 @@ const Inquire = ({ defaultPackage = "", onClose }: InquireProps) => {
               if (isAtBottom) {
                 scrollRef.current.scrollTo({ top: 0, behavior: "smooth" });
               } else {
-                scrollRef.current.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+                scrollRef.current.scrollTo({
+                  top: scrollRef.current.scrollHeight,
+                  behavior: "smooth",
+                });
               }
             }
           }}

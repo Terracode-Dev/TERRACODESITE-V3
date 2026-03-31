@@ -23,12 +23,13 @@ const Pvideo = () => {
             <source src="hero/Hero.webm" type="video/webm" />
             Your browser does not support the video tag.
           </video> */}
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/MimYkRKlpXk?autoplay=1&mute=1&playsinline=1" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen allowTransparency ></iframe>
+
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/IEBVMbrgrVo?si=T8joaFvAAEPivs8_" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen allowTransparency ></iframe>
         </div>
       </div>
 
-      
-      
+
+
     </div>
   );
 };

@@ -139,10 +139,20 @@ const PartnershipsSection: React.FC = () => {
 
   return (
     <>
-    <div className="container mx-auto bg-black flex flex-col items-center justify-center px-6 py-12 font-lufga mt-6 md:my-28 ">
-      
+    <div className="container mx-auto bg-black flex flex-col items-center justify-center px-6  font-lufga  gap-10">
+      <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
+      {/* Heading */}
+        <h1 className="mt-10 text-3xl md:text-5xl lg:text-6xl font-light text-[#FDA10A] leading-tight mb-6">
+          Choose the <span className="text-[#FDA10A] font-bol">One</span> {" "}
+          <span className="block">
+            
+            <span className="text-white font-bold">Best fits your</span> <span className="text-white font-bold">Scale</span>
+          </span>
+        </h1>
+      </div>
       {/* Pricing Cards */}
-      <div className="grid md:grid-cols-3  gap-8 w-full max-w-5xl ">
+      <div className="grid md:grid-cols-3  gap-8 w-full max-w-7xl ">
+        
         {filteredPlans.map((plan, index) => (
           <div
             key={index}
@@ -206,7 +216,7 @@ const PartnershipsSection: React.FC = () => {
         ))}
       </div>
       {/* Location Status Message */}
-      <div className="mt-12 w-full max-w-5xl flex justify-center">
+      <div className="mt-12 w-full max-w-5xl flex justify-center mb-14">
         <div className="px-5 py-3 rounded-2xl bg-neutral-900/40 border border-neutral-800 text-gray-400 text-xs md:text-sm flex items-center gap-4 transition-opacity duration-500 max-w-2xl text-center">
           <span className={`flex h-2 w-2 rounded-full shrink-0 ${locationPermission === 'granted' ? 'bg-green-500/70' : 'bg-orange-500/50'}`}></span>
           <p>

@@ -1,13 +1,38 @@
 import { useNavigate, useSearch } from '@tanstack/react-router';
-import { CheckCircle, Download } from 'lucide-react';
+import { CheckCircle, Download, AlertCircle, Loader2 } from 'lucide-react';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { PaymentReceipt } from '../../components/pdfx/PaymentReceipt';
+import api from '../../api/axios';
+
+interface TransactionData {
+  transaction_id: string;
+  order_id: string;
+  payment_id: string;
+  merchant_id: string;
+  amount: string;
+  currency: string;
+  status: string;
+  status_code: string;
+  received_at: string;
+  method: string;
+  status_message: string;
+  card_holder_name: string;
+  card_no: string;
+  card_expiry: string;
+  captured_amount: string;
+  recurring: string;
+  custom_1: string;
+  custom_2: string;
+}
 
 export default function PaymentSuccessPage() {
   const navigate = useNavigate();
   const [customerDetails, setCustomerDetails] = useState<any>(null);
+  const [transaction, setTransaction] = useState<TransactionData | null>(null);
+  const [txLoading, setTxLoading] = useState(true);
+  const [txError, setTxError] = useState<string | null>(null);
 
   useEffect(() => {
     // Retrieve details stored from the review page
@@ -21,11 +46,47 @@ export default function PaymentSuccessPage() {
   const search = useSearch({ strict: false }) as {
     order_id?: string;
     payment_id?: string;
+    transaction_id?: string;
     status_code?: string;
     status_message?: string;
     amount?: string;
     currency?: string;
   };
+
+  useEffect(() => {
+    const fetchTransaction = async () => {
+      // transaction_id may come from URL params directly, or fall back to payment_id
+      const transactionId = search.transaction_id || search.payment_id;
+      const orderId = search.order_id;
+
+      if (!transactionId || !orderId) {
+        setTxError('Missing transaction or order information.');
+        setTxLoading(false);
+        return;
+      }
+
+      try {
+        const response = await api.get('/api/transaction', {
+          params: { transaction_id: transactionId, order_id: orderId },
+        });
+        if (response.data?.success) {
+          setTransaction(response.data.transaction);
+        } else {
+          setTxError('Could not retrieve transaction details.');
+        }
+      } catch (err: any) {
+        const status = err?.response?.status;
+        if (status === 400) setTxError('Invalid transaction request.');
+        else if (status === 403) setTxError('Order ID mismatch — transaction not verified.');
+        else if (status === 404) setTxError('Transaction record not found.');
+        else setTxError('Failed to load transaction details.');
+      } finally {
+        setTxLoading(false);
+      }
+    };
+
+    fetchTransaction();
+  }, [search.transaction_id, search.payment_id, search.order_id]);
 
   // Package name mapping (synchronized with details-view.tsx)
   const packageNames: { [key: string]: string } = {
@@ -36,6 +97,14 @@ export default function PaymentSuccessPage() {
   };
 
   const packageName = packageNames[search.order_id?.toLowerCase() || ""] || "Service Package";
+
+  // Prefer API data over URL params where available
+  const displayOrderId = transaction?.order_id ?? search.order_id;
+  const displayPaymentId = transaction?.payment_id ?? search.payment_id;
+  const displayAmount = transaction?.amount ?? search.amount;
+  const displayCurrency = transaction?.currency ?? search.currency;
+  const displayMethod = transaction?.method;
+  const displayStatus = transaction?.status;
 
   return (
     <div className="min-h-screen bg-[#000000] font-lufga flex items-center justify-center relative overflow-hidden px-4 py-10">
@@ -89,11 +158,25 @@ export default function PaymentSuccessPage() {
             {/* RIGHT */}
             <div className="md:col-span-3 flex flex-col justify-center">
 
+              {txLoading ? (
+                <div className="flex items-center justify-center gap-3 text-gray-400 py-8">
+                  <Loader2 className="h-5 w-5 animate-spin text-[#FDA10A]" />
+                  <span className="text-sm">Verifying transaction...</span>
+                </div>
+              ) : txError ? (
+                <div className="flex items-center gap-3 bg-red-500/10 border border-red-500/20 rounded-2xl p-4 mb-5">
+                  <AlertCircle className="h-5 w-5 text-red-400 shrink-0" />
+                  <p className="text-sm text-red-400">{txError}</p>
+                </div>
+              ) : null}
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5">
-                <InfoBox label="Order ID" value={search.order_id} />
-                <InfoBox label="Amount Paid" value={formatAmount(search.amount, search.currency)} />
+                <InfoBox label="Order ID" value={displayOrderId} />
+                <InfoBox label="Amount Paid" value={formatAmount(displayAmount, displayCurrency)} />
                 <InfoBox label="Package Summary" value={packageName} fullWidth />
-                <InfoBox label="Transaction ID" value={search.payment_id} fullWidth />
+                <InfoBox label="Transaction ID" value={displayPaymentId} fullWidth />
+                {displayMethod && <InfoBox label="Payment Method" value={displayMethod} />}
+                {displayStatus && <InfoBox label="Status" value={displayStatus} />}
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -108,10 +191,10 @@ export default function PaymentSuccessPage() {
                 <PDFDownloadLink
                   document={
                     <PaymentReceipt
-                      orderId={search.order_id}
-                      paymentId={search.payment_id}
-                      amount={search.amount}
-                      currency={search.currency}
+                      orderId={displayOrderId}
+                      paymentId={displayPaymentId}
+                      amount={displayAmount}
+                      currency={displayCurrency}
                       customerName={customerDetails ? `${customerDetails.first_name} ${customerDetails.last_name}` : undefined}
                       customerEmail={customerDetails?.email}
                       companyName={customerDetails?.company_name}
@@ -120,7 +203,7 @@ export default function PaymentSuccessPage() {
                       note={customerDetails?.note}
                     />
                   }
-                  fileName={`terracode payment invoice - ${search.order_id || 'unknown'}.pdf`}
+                  fileName={`terracode payment invoice - ${displayOrderId || 'unknown'}.pdf`}
                 >
                   {({ loading }: { loading: boolean }) => (
                     <button

@@ -10,21 +10,12 @@ interface TransactionData {
   transaction_id: string;
   order_id: string;
   payment_id: string;
-  merchant_id: string;
   amount: string;
   currency: string;
   status: string;
-  status_code: string;
   received_at: string;
   method: string;
   status_message: string;
-  card_holder_name: string;
-  card_no: string;
-  card_expiry: string;
-  captured_amount: string;
-  recurring: string;
-  custom_1: string;
-  custom_2: string;
 }
 
 export default function PaymentSuccessPage() {
@@ -42,32 +33,23 @@ export default function PaymentSuccessPage() {
     }
   }, []);
 
-  // PayHere redirects with query params
   const search = useSearch({ strict: false }) as {
     order_id?: string;
-    payment_id?: string;
-    transaction_id?: string;
-    status_code?: string;
-    status_message?: string;
-    amount?: string;
-    currency?: string;
   };
 
   useEffect(() => {
     const fetchTransaction = async () => {
-      // transaction_id may come from URL params directly, or fall back to payment_id
-      const transactionId = search.transaction_id || search.payment_id;
       const orderId = search.order_id;
 
-      if (!transactionId || !orderId) {
-        setTxError('Missing transaction or order information.');
+      if (!orderId) {
+        setTxError('Missing order information.');
         setTxLoading(false);
         return;
       }
 
       try {
         const response = await api.get('/api/transaction', {
-          params: { transaction_id: transactionId, order_id: orderId },
+          params: { order_id: orderId },
         });
         if (response.data?.success) {
           setTransaction(response.data.transaction);
@@ -77,7 +59,6 @@ export default function PaymentSuccessPage() {
       } catch (err: any) {
         const status = err?.response?.status;
         if (status === 400) setTxError('Invalid transaction request.');
-        else if (status === 403) setTxError('Order ID mismatch — transaction not verified.');
         else if (status === 404) setTxError('Transaction record not found.');
         else setTxError('Failed to load transaction details.');
       } finally {
@@ -86,7 +67,7 @@ export default function PaymentSuccessPage() {
     };
 
     fetchTransaction();
-  }, [search.transaction_id, search.payment_id, search.order_id]);
+  }, [search.order_id]);
 
   // Package name mapping (synchronized with details-view.tsx)
   const packageNames: { [key: string]: string } = {
@@ -98,11 +79,10 @@ export default function PaymentSuccessPage() {
 
   const packageName = packageNames[search.order_id?.toLowerCase() || ""] || "Service Package";
 
-  // Prefer API data over URL params where available
   const displayOrderId = transaction?.order_id ?? search.order_id;
-  const displayPaymentId = transaction?.payment_id ?? search.payment_id;
-  const displayAmount = transaction?.amount ?? search.amount;
-  const displayCurrency = transaction?.currency ?? search.currency;
+  const displayPaymentId = transaction?.payment_id;
+  const displayAmount = transaction?.amount;
+  const displayCurrency = transaction?.currency;
   const displayMethod = transaction?.method;
   const displayStatus = transaction?.status;
 

@@ -2,36 +2,58 @@ import { Calendar} from "lucide-react";
 import { useState, useEffect } from "react";
 import { articlesData } from "./data";
 import type{ SidebarItem } from "./data";
+import { useNavigate, useSearch } from '@tanstack/react-router';
 
+const createSlug = (title: string) => {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+};
 
 export default function TandC() {
+  const search = useSearch({ strict: false }) as { policy?: string };
+  const navigate = useNavigate();
+
+  const initialArticle = search.policy 
+    ? articlesData.find(a => createSlug(a.title) === search.policy) || articlesData[0]
+    : articlesData[0];
+
   // State to track current article
-  const [currentArticle, setCurrentArticle] = useState(articlesData[0]);
+  const [currentArticle, setCurrentArticle] = useState(initialArticle);
   // State to manage sidebar articles
   const [sidebarArticles, setSidebarArticles] = useState<SidebarItem[]>([]);
-  // Initialize sidebar articles on first render
+  
+  // Initialize and update sidebar articles when currentArticle changes
   useEffect(() => {
-    // Initially, show all articles except the main one in the sidebar
     setSidebarArticles(articlesData.filter(article => article.id !== currentArticle.id));
-  }, []);
+  }, [currentArticle]);
+
+  // Sync state when URL changes (e.g. user uses back/forward buttons)
+  useEffect(() => {
+    if (search.policy) {
+      const article = articlesData.find(a => createSlug(a.title) === search.policy);
+      if (article && article.id !== currentArticle.id) {
+        setCurrentArticle(article);
+      }
+    } else {
+        if (currentArticle.id !== articlesData[0].id) {
+            setCurrentArticle(articlesData[0]);
+        }
+    }
+  }, [search.policy]);
 
   // Function to handle clicking on "Read More"
   const handleReadMore = (articleId: number) => {
     // Find the clicked article
     const selectedArticle = articlesData.find(article => article.id === articleId);
     if (selectedArticle) {
-      // Store the current article before replacing it
-      const previousArticle = currentArticle;
+      // Update URL
+      navigate({
+        to: '/t&s',
+        search: { policy: createSlug(selectedArticle.title) },
+      });
+      
       // Update the main article
       setCurrentArticle(selectedArticle);
-      setSidebarArticles(
-        articlesData
-          .filter(article => article.id !== selectedArticle.id)
-          .map(article => 
-            article.id === previousArticle.id 
-              ? previousArticle  
-              : article
-          ));
+      
       // Scroll to top when changing article
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }

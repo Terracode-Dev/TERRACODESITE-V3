@@ -12,7 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WebsiteSolutionsRouteImport } from './routes/website-solutions'
 import { Route as UxDesignRouteImport } from './routes/ux-design'
 import { Route as TestRouteImport } from './routes/test'
-import { Route as TermsConditionsRouteImport } from './routes/terms-conditions'
+import { Route as TChar38sRouteImport } from './routes/t&s'
 import { Route as SuccessPageRouteImport } from './routes/success-page'
 import { Route as ServiceRouteImport } from './routes/service'
 import { Route as PricingRouteImport } from './routes/pricing'
@@ -49,9 +49,9 @@ const TestRoute = TestRouteImport.update({
   path: '/test',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TermsConditionsRoute = TermsConditionsRouteImport.update({
-  id: '/terms-conditions',
-  path: '/terms-conditions',
+const TChar38sRoute = TChar38sRouteImport.update({
+  id: '/t&s',
+  path: '/t&s',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SuccessPageRoute = SuccessPageRouteImport.update({
@@ -176,7 +176,7 @@ export interface FileRoutesByFullPath {
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/success-page': typeof SuccessPageRoute
-  '/terms-conditions': typeof TermsConditionsRoute
+  '/t&s': typeof TChar38sRoute
   '/test': typeof TestRoute
   '/ux-design': typeof UxDesignRoute
   '/website-solutions': typeof WebsiteSolutionsRoute
@@ -202,7 +202,7 @@ export interface FileRoutesByTo {
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/success-page': typeof SuccessPageRoute
-  '/terms-conditions': typeof TermsConditionsRoute
+  '/t&s': typeof TChar38sRoute
   '/test': typeof TestRoute
   '/ux-design': typeof UxDesignRoute
   '/website-solutions': typeof WebsiteSolutionsRoute
@@ -229,7 +229,7 @@ export interface FileRoutesById {
   '/pricing': typeof PricingRoute
   '/service': typeof ServiceRoute
   '/success-page': typeof SuccessPageRoute
-  '/terms-conditions': typeof TermsConditionsRoute
+  '/t&s': typeof TChar38sRoute
   '/test': typeof TestRoute
   '/ux-design': typeof UxDesignRoute
   '/website-solutions': typeof WebsiteSolutionsRoute
@@ -257,7 +257,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/service'
     | '/success-page'
-    | '/terms-conditions'
+    | '/t&s'
     | '/test'
     | '/ux-design'
     | '/website-solutions'
@@ -283,7 +283,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/service'
     | '/success-page'
-    | '/terms-conditions'
+    | '/t&s'
     | '/test'
     | '/ux-design'
     | '/website-solutions'
@@ -309,7 +309,7 @@ export interface FileRouteTypes {
     | '/pricing'
     | '/service'
     | '/success-page'
-    | '/terms-conditions'
+    | '/t&s'
     | '/test'
     | '/ux-design'
     | '/website-solutions'
@@ -336,7 +336,7 @@ export interface RootRouteChildren {
   PricingRoute: typeof PricingRoute
   ServiceRoute: typeof ServiceRoute
   SuccessPageRoute: typeof SuccessPageRoute
-  TermsConditionsRoute: typeof TermsConditionsRoute
+  TChar38sRoute: typeof TChar38sRoute
   TestRoute: typeof TestRoute
   UxDesignRoute: typeof UxDesignRoute
   WebsiteSolutionsRoute: typeof WebsiteSolutionsRoute
@@ -365,11 +365,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TestRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/terms-conditions': {
-      id: '/terms-conditions'
-      path: '/terms-conditions'
-      fullPath: '/terms-conditions'
-      preLoaderRoute: typeof TermsConditionsRouteImport
+    '/t&s': {
+      id: '/t&s'
+      path: '/t&s'
+      fullPath: '/t&s'
+      preLoaderRoute: typeof TChar38sRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/success-page': {
@@ -536,7 +536,7 @@ const rootRouteChildren: RootRouteChildren = {
   PricingRoute: PricingRoute,
   ServiceRoute: ServiceRoute,
   SuccessPageRoute: SuccessPageRoute,
-  TermsConditionsRoute: TermsConditionsRoute,
+  TChar38sRoute: TChar38sRoute,
   TestRoute: TestRoute,
   UxDesignRoute: UxDesignRoute,
   WebsiteSolutionsRoute: WebsiteSolutionsRoute,

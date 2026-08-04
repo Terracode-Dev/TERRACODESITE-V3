@@ -3,46 +3,46 @@ import { useState, useMemo } from 'react'
 
 const positions = [
     {
-        title: "Frontend Developer",
-        description: "Frontend Developer with a passion for building user-friendly web applications.",
+        title: "Marketing Executive",
+        description: "Looking for a creative marketer to manage campaigns and boost brand awareness.",
         location: "📍 Colombo",
-        type: " 🌐 Remote",
+        type: " 🏢 On-Site",
         department: "🕒 Full-Time",
         id: "1",
-        category: "Development",
-        link: "https://forms.zohopublic.com/directorterrac1/form/JoinTerracodeFamily/formperma/1MsxKJIu9vhER63oQzDXV_6DZ2o5DgGlI6DLgAOzNqo"
+        category: "Marketing",
+        link: "https://docs.google.com/forms/d/e/1FAIpQLSdBmvA2Ch9NhQHsSeDHwLAeutn79YdCdk51fJ96LBIXsTpI2A/viewform?usp=sharing&ouid=118157052958448140209"
     },
     {
-        title: "Flutter Developer",
-        description: "Flutter Developer with expertise in building cross-platform mobile applications.",
+        title: "Software Engineer Intern",
+        description: "Passionate students eager to learn, build software, and grow with our engineering team.",
         location: "📍 Colombo",
-        type: " 🌐 Remote",
-        department: "🕒 Full-Time",
+        type: " 🔄 Hybrid",
+        department: "🕒 Internship",
         id: "2",
         category: "Development",
-        link: "https://forms.zohopublic.com/directorterrac1/form/JoinTerracodeFamily/formperma/1MsxKJIu9vhER63oQzDXV_6DZ2o5DgGlI6DLgAOzNqo"
+        link: "https://forms.gle/1TCikEHNKsEiGvMPA"
     },
-    {
-        title: "UX Designer",
-        description: "Design user-centered experiences that delight and engage.",
-        location: "📍 Colombo",
-        type: " 🌐 Remote",
-        department: "🕒 Full-Time",
-        id: "3",
-        category: "Design",
-        link: "https://forms.zohopublic.com/directorterrac1/form/JoinTerracodeFamily/formperma/1MsxKJIu9vhER63oQzDXV_6DZ2o5DgGlI6DLgAOzNqo"
-    },
+    // {
+    //     title: "UX Designer",
+    //     description: "Design user-centered experiences that delight and engage.",
+    //     location: "📍 Colombo",
+    //     type: " 🌐 Remote",
+    //     department: "🕒 Full-Time",
+    //     id: "3",
+    //     category: "Design",
+    //     link: "https://forms.zohopublic.com/directorterrac1/form/JoinTerracodeFamily/formperma/1MsxKJIu9vhER63oQzDXV_6DZ2o5DgGlI6DLgAOzNqo"
+    // },
     
-    {
-        title: "Marketing Specialist",
-        description: "Develop and execute marketing strategies to grow our brand.",
-        location: "📍 Colombo",
-        type: " 🌐 Remote",
-        department: "🕒 Full-Time",
-        id: "6",
-        category: "Marketing",
-        link: "https://forms.zohopublic.com/directorterrac1/form/JoinTerracodeFamily/formperma/1MsxKJIu9vhER63oQzDXV_6DZ2o5DgGlI6DLgAOzNqo"
-    },
+    // {
+    //     title: "Marketing Specialist",
+    //     description: "Develop and execute marketing strategies to grow our brand.",
+    //     location: "📍 Colombo",
+    //     type: " 🌐 Remote",
+    //     department: "🕒 Full-Time",
+    //     id: "6",
+    //     category: "Marketing",
+    //     link: "https://forms.zohopublic.com/directorterrac1/form/JoinTerracodeFamily/formperma/1MsxKJIu9vhER63oQzDXV_6DZ2o5DgGlI6DLgAOzNqo"
+    // },
     
 ]
 

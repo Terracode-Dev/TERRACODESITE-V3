@@ -11,7 +11,7 @@ Terracode is a full-service software development agency specializing in innovati
 **Company Name:** Terracode
 **Website:** https://www.terracodedev.com
 **Tagline:** Crafting Intelligent Digital Futures
-**Contact:** contact@terracodedev.com
+**Contact:** hello@terracodedev.com
 
 ## Services
 
@@ -107,6 +107,6 @@ Terracode is a full-service software development agency specializing in innovati
 ## Contact Information
 
 - **Website:** https://www.terracodedev.com
-- **Email:** contact@terracodedev.com
+- **Email:** hello@terracodedev.com
 - **LinkedIn:** https://lk.linkedin.com/company/terracodedev
 - **GitHub:** https://github.com/Terracode-Dev

@@ -11,8 +11,8 @@ const DirectContact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-8xl ">
             <div className="flex bg-neutral-900  rounded-3xl shadow-lg justify-center items-center p-5 md:px-6 hover:scale-105 transition-transform duration-300">
                 <ul className=" space-y-4 md:space-y-6 mt-4 flex flex-col gap-2 ">
-                    <a href="mailto:contact@terracodedev.com">
-                      <li className="text-lg md:text-xl flex flex-row gap-4 items-center"><Mail/> contact@terracodedev.com</li>
+                    <a href="mailto:hello@terracodedev.com">
+                      <li className="text-lg md:text-xl flex flex-row gap-4 items-center"><Mail/>hello@terracodedev.com</li>
                     </a>
                     <li className="text-md md:text-xl flex flex-row justify-start gap-4 items-center">
                       <Phone/>

@@ -24,7 +24,7 @@ export default function Footer() {
         <div className="flex flex-col px-4 gap-4  items-start justify-start ">
             {/* <img className="w-[102px] h-[65px] object-cover" alt="" src="hero/Frame 9.png" /> */}
             <img className={showChristmas? "relative -top-3 w-[130px] h-[88px] object-cover" :"w-[102px] h-[65px] object-cover"} alt="Logo" src={showChristmas ? "hero/chrilogo.png" : "hero/Frame 9.png"} />
-             <a className=" [text-decoration:underline]  font-semibold text-wrap" href="mailto:contact@terracodedev.com" target="_blank">contact@terracodedev.com</a>
+             <a className=" [text-decoration:underline]  font-semibold text-wrap" href="mailto:hello@terracodedev.com" target="_blank">hello@terracodedev.com</a>
              <TerraButton onClick={handleClick}/>
         </div>
         <div className="flex flex-col px-4 gap-4 items-start justify-start">
@@ -112,7 +112,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-center gap-4">
             {/* <img className="w-[130px] object-cover" alt="" src="hero/Frame 9.png" /> */}
             <img className={showChristmas? "relative -top-3 w-[170px]  object-cover" :"w-[130px] object-cover"} alt="Logo" src={showChristmas ? "hero/chrilogo.png" : "hero/Frame 9.png"} />
-            <a className="relative [text-decoration:underline] tracking-[0.04px] leading-6 font-semibold  text-[inherit]" href="mailto:contact@terracodedev.com" target="_blank">contact@terracodedev.com</a>
+            <a className="relative [text-decoration:underline] tracking-[0.04px] leading-6 font-semibold  text-[inherit]" href="mailto:hello@terracodedev.com" target="_blank">hello@terracodedev.com</a>
         </div>
         <div className="flex flex-row">
           <div className="flex flex-col px-4 gap-4 items-start justify-start">

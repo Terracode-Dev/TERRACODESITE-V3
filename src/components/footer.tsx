@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="flex-1 flex flex-col md:flex-row  md:items-start md:justify-between ">
                 <div className="flex flex-col items-start justify-end gap-8">
                     <img className="w-[102px] h-[65px] object-cover" alt="" src="Frame 9.png" />
-                    <a className="relative [text-decoration:underline] tracking-[0.04px] leading-6 font-semibold  text-[inherit]" href="mailto:contact@terracodedev.com" target="_blank">contact@terracodedev.com</a>
+                    <a className="relative [text-decoration:underline] tracking-[0.04px] leading-6 font-semibold  text-[inherit]" href="mailto:hello@terracodedev.com" target="_blank">hello@terracodedev.com</a>
                    
                         <TerraButton/>
                         

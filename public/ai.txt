@@ -16,7 +16,7 @@ specialization: Custom Software Development, AI Solutions, Cloud Computing, Mobi
 ## Contact
 
 website: https://www.terracodedev.com
-email: contact@terracodedev.com
+email: hello@terracodedev.com
 linkedin: https://lk.linkedin.com/company/terracodedev
 github: https://github.com/Terracode-Dev
 
@@ -146,7 +146,7 @@ Terracode uses agile methodologies with a focus on user-centered design, ensurin
 Yes, Terracode specializes in AI solutions including machine learning model development, natural language processing, computer vision, and AI-powered automation.
 
 ### How can I contact Terracode?
-You can contact Terracode via email at contact@terracodedev.com or through the contact form at https://www.terracodedev.com/contact
+You can contact Terracode via email at hello@terracodedev.com or through the contact form at https://www.terracodedev.com/contact
 
 ## Crawling Permissions
 

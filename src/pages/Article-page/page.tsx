@@ -18,7 +18,7 @@ const Page = () => {
       <Navbar/>
       {/* <Hero/> */}
       {/* <Article/> */}
-      <NArticle />
+     <NArticle />
       </motion.div>
     </div>
   )

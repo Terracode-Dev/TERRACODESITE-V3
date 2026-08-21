@@ -58,7 +58,68 @@ const articlesData: SidebarItem[] = [
       }
     ]
   },
+
+  {
+    id: 1,
+    title: "Merkor: Turning Business Data Into Clear Direction",
+    date: "21 August 2026",
+    time: "10 mins read",
+    image: "/article/merkor.jpeg",
+    author_image: "employee/IMG_1158.PNG",
+    author_name: "Nomin Sendinu",
+    position: "CEO & Co-founder, Terracode Private Limited",
+    description: "Discover how Merkor, our innovative business intelligence tool, transforms complex data into actionable insights for smarter decision-making.",
+    comments: 192,
+    views: "4k",
+    sections: [
+      {
+        content: "Every business creates valuable data every day. Sales, customers, orders, inventory, payments, returns, operations, and performance signals all carry important answers. But in most companies, those answers are hard to reach. They are often spread across different systems, hidden inside reports, locked in spreadsheets, or understood only by a few people who know where to look. This makes decision-making slower than it should be. Owners and managers may know the data exists, but still struggle to turn it into clear action."
+  },
+      {
+        content: "Merkor is built to solve that problem."
+
+      },
+      {
+        content: "Merkor is an intelligent business insight platform designed for owners, founders, and management teams who want to understand their business with more clarity and confidence. It connects with the data your company already uses and transforms it into meaningful answers, practical reports, and decision-ready recommendations. Instead of asking your team to spend hours building dashboards or manually comparing numbers, Merkor helps you ask direct business questions and receive clear explanations you can actually use."
+
+      },
+      {
+        content: "The purpose of Merkor is not to overwhelm you with more charts. Its purpose is to help you understand what is happening, why it may be happening, and what deserves your attention next."
+
+      },
+      {
+        content: "With Merkor, a business owner can explore questions such as: What is driving revenue this month? Which products are performing best? Where are sales slowing down? Which customers need attention? Are refunds, cancellations, or stock issues affecting growth? What risks should the team act on before they become bigger problems? These are not just technical questions. They are management questions. They affect planning, cash flow, customer relationships, operations, and daily decision-making."
+
+      },
+      {
+        content: "Merkor makes these answers easier to access by translating complex business data into simple, structured insight. It helps surface trends, highlight unusual changes, identify risks, and prepare reports that can be used in meetings or reviews. The goal is to give leaders a clearer view of their company without requiring them to become data specialists."
+
+      },
+      {
+        content: "A key part of Merkor is trust. Business decisions should not be based on guesses, vague summaries, or numbers that cannot be explained. Merkor is designed to work carefully with verified business information, keeping insights grounded in the data available to the company. When it provides an answer, report, or recommendation, the focus is on clarity, relevance, and reliability."
+
+      },
+      {
+        content: "Merkor also helps teams move faster. Instead of waiting for manual analysis, owners and managers can ask questions in natural language and get direction in minutes. This can support monthly reviews, performance checks, customer follow-ups, inventory decisions, operational planning, and strategic conversations. It gives teams a practical way to stay close to the business, notice changes earlier, and make decisions with better context."
+
+      },
+      {
+        content: "For growing companies, Merkor becomes especially valuable because complexity increases over time. More customers, more products, more transactions, more tools, and more teams can make it harder to see the full picture. Merkor acts as a layer of understanding across that complexity. It helps connect the dots between different parts of the business so leaders can see not only individual numbers, but the bigger story behind them."
+
+      },
+      {
+        content: "At its core, Merkor exists to make business intelligence more human. It turns data into language, reports into decisions, and scattered information into focused direction. It supports the people responsible for making the business better by giving them a clearer, calmer, and more useful way to understand what is going on."
+
+      },
+      {
+        content: "Merkor is not just a reporting tool. It is a business decision companion built to help owners and management teams see clearly, act confidently, and stay ahead of the next important move."
+  }
+  ]
+  },
+
+
   // {
+
   //   id: 1,
   //   title: "Designing for Humans in an AI World",
   //   date: "2 November 2024",

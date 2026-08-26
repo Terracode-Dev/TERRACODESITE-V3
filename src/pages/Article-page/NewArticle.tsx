@@ -25,6 +25,17 @@ interface SidebarItem {
   sections: Section[];
 }
 
+const LIKED_ARTICLES_STORAGE_KEY = "terracode_liked_articles";
+
+function loadLikedArticleIds(): Set<number> {
+  try {
+    const stored = window.localStorage.getItem(LIKED_ARTICLES_STORAGE_KEY);
+    return stored ? new Set(JSON.parse(stored)) : new Set();
+  } catch {
+    return new Set();
+  }
+}
+
 const articlesData: SidebarItem[] = [
   {
     id: 0,
@@ -597,6 +608,10 @@ export default function NArticle() {
   const [currentArticle, setCurrentArticle] = useState(articlesData[0]);
   // State to manage sidebar articles
   const [sidebarArticles, setSidebarArticles] = useState<SidebarItem[]>([]);
+  // Whether the share link was just copied to the clipboard
+  const [shareCopied, setShareCopied] = useState(false);
+  // IDs of articles the visitor has liked, persisted in localStorage
+  const [likedArticleIds, setLikedArticleIds] = useState<Set<number>>(() => loadLikedArticleIds());
   // Initialize sidebar articles on first render
   useEffect(() => {
     // Initially, show all articles except the main one in the sidebar
@@ -628,6 +643,52 @@ export default function NArticle() {
   // Check if there are more articles to display
   const hasMoreArticles = sidebarArticles.length > 0;
 
+  // Toggle whether an article is liked, persisting the choice to localStorage
+  const toggleLike = (articleId: number) => {
+    setLikedArticleIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(articleId)) {
+        next.delete(articleId);
+      } else {
+        next.add(articleId);
+      }
+      try {
+        window.localStorage.setItem(LIKED_ARTICLES_STORAGE_KEY, JSON.stringify(Array.from(next)));
+      } catch {
+        // localStorage unavailable; like still applies for this session
+      }
+      return next;
+    });
+  };
+
+  // Base like count plus one if the visitor has liked this article
+  const getLikeCount = (item: SidebarItem) =>
+    item.comments + (likedArticleIds.has(item.id) ? 1 : 0);
+
+  // Share the current article via the native share sheet, falling back to copying the link
+  const handleShare = async () => {
+    const shareUrl = window.location.href;
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: currentArticle.title,
+          text: currentArticle.description,
+          url: shareUrl,
+        });
+      } catch {
+        // User cancelled the share sheet; nothing to do
+      }
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setShareCopied(true);
+      setTimeout(() => setShareCopied(false), 2000);
+    } catch {
+      // Clipboard access unavailable; nothing to do
+    }
+  };
+
   return (
     <div className="bg-black text-white font-lufga xl:my-10 mb-20">
       {/* Main Container */}
@@ -650,9 +711,26 @@ export default function NArticle() {
                 <Clock size={22} /> {currentArticle.time}
               </span>
             </div>
-            <span className="flex items-center gap-3 xl:text-2xl mr-5 text-[#FDA10A]">
-              <Share size={22} /> Share
-            </span>
+            <div className="flex items-center gap-6 mr-5">
+              <button
+                type="button"
+                onClick={() => toggleLike(currentArticle.id)}
+                className="flex items-center gap-3 xl:text-2xl text-[#FDA10A] bg-transparent border-none cursor-pointer hover:opacity-80 transition"
+              >
+                <Heart
+                  size={22}
+                  className={likedArticleIds.has(currentArticle.id) ? "fill-[#FDA10A]" : ""}
+                />
+                {getLikeCount(currentArticle)}
+              </button>
+              <button
+                type="button"
+                onClick={handleShare}
+                className="flex items-center gap-3 xl:text-2xl text-[#FDA10A] bg-transparent border-none cursor-pointer hover:opacity-80 transition"
+              >
+                <Share size={22} /> {shareCopied ? "Link copied!" : "Share"}
+              </button>
+            </div>
           </div>
           <img
             src={currentArticle.image}
@@ -708,9 +786,16 @@ export default function NArticle() {
                     <div className="backdrop-blur-sm bg-white/10 rounded-full px-3 py-1 flex items-center gap-4">
                       <Send className="w-4 h-4" />{item.views}
                     </div>
-                    <div className="backdrop-blur-sm bg-white/10 rounded-full px-3 py-1 flex items-center gap-4">
-                      <Heart className="w-4 h-4" /> {item.comments}
-                    </div>
+                    <button
+                      type="button"
+                      onClick={() => toggleLike(item.id)}
+                      className="backdrop-blur-sm bg-white/10 rounded-full px-3 py-1 flex items-center gap-4 border-none cursor-pointer hover:bg-white/20 transition"
+                    >
+                      <Heart
+                        className={`w-4 h-4 ${likedArticleIds.has(item.id) ? "fill-[#FDA10A] text-[#FDA10A]" : ""}`}
+                      />
+                      {getLikeCount(item)}
+                    </button>
                   </div>
                   {/* Read More Arrow with Click Handler */}
                   <div

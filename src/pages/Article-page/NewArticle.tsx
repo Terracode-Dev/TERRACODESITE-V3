@@ -1,5 +1,6 @@
 import { Calendar, Clock, Heart, Send, Share } from "lucide-react";
 import { useState, useEffect, type ReactNode } from "react";
+import { loadLikedArticleIds, saveLikedArticleIds } from "@/lib/articleLikes";
 
 interface Section {
   title?: string;
@@ -25,18 +26,8 @@ interface SidebarItem {
   sections: Section[];
 }
 
-const LIKED_ARTICLES_STORAGE_KEY = "terracode_liked_articles";
 
-function loadLikedArticleIds(): Set<number> {
-  try {
-    const stored = window.localStorage.getItem(LIKED_ARTICLES_STORAGE_KEY);
-    return stored ? new Set(JSON.parse(stored)) : new Set();
-  } catch {
-    return new Set();
-  }
-}
-
-const articlesData: SidebarItem[] = [
+export const articlesData: SidebarItem[] = [
   {
     id: 0,
     title: "Our Story So Far",
@@ -652,11 +643,7 @@ export default function NArticle() {
       } else {
         next.add(articleId);
       }
-      try {
-        window.localStorage.setItem(LIKED_ARTICLES_STORAGE_KEY, JSON.stringify(Array.from(next)));
-      } catch {
-        // localStorage unavailable; like still applies for this session
-      }
+      saveLikedArticleIds(next);
       return next;
     });
   };

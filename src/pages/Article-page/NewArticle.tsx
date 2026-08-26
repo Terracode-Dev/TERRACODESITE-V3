@@ -1,14 +1,18 @@
 import { Calendar, Clock, Heart, Send, Share } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 
 interface Section {
   title?: string;
-  content: string;
+  subtitle?: string;
+  content: ReactNode;
+  image?: string;
+  imageAlt?: string;
 }
 
 interface SidebarItem {
   id: number;
   title: string;
+  subtitle?: string;
   date?: string;
   time?: string;
   image?: string;
@@ -23,11 +27,11 @@ interface SidebarItem {
 
 const articlesData: SidebarItem[] = [
   {
-    id: 0, 
+    id: 0,
     title: "Our Story So Far",
     date: "2 August 2025",
     time: "10 mins read",
-    image: "article/Mask group.png",
+    image: "article/TC1-Articale.png",
     author_image: "employee/IMG_1158.PNG",
     author_name: "Nomin Sendinu",
     position: "CEO & Co-founder, Terracode Private Limited",
@@ -64,7 +68,7 @@ const articlesData: SidebarItem[] = [
     title: "Merkor: Turning Business Data Into Clear Direction",
     date: "21 August 2026",
     time: "10 mins read",
-    image: "/article/merkor.jpeg",
+    image: "/article/ME-Articale.png",
     author_image: "employee/IMG_1158.PNG",
     author_name: "Nomin Sendinu",
     position: "CEO & Co-founder, Terracode Private Limited",
@@ -74,7 +78,7 @@ const articlesData: SidebarItem[] = [
     sections: [
       {
         content: "Every business creates valuable data every day. Sales, customers, orders, inventory, payments, returns, operations, and performance signals all carry important answers. But in most companies, those answers are hard to reach. They are often spread across different systems, hidden inside reports, locked in spreadsheets, or understood only by a few people who know where to look. This makes decision-making slower than it should be. Owners and managers may know the data exists, but still struggle to turn it into clear action."
-  },
+      },
       {
         content: "Merkor is built to solve that problem."
 
@@ -113,10 +117,377 @@ const articlesData: SidebarItem[] = [
       },
       {
         content: "Merkor is not just a reporting tool. It is a business decision companion built to help owners and management teams see clearly, act confidently, and stay ahead of the next important move."
-  }
-  ]
+      }
+    ]
   },
 
+  {
+    id: 2,
+    title: "Foreststore: SaaS E-commerce Platform to Build, Manage, and Scale Online Stores",
+    date: "24 August 2026",
+    time: "10 mins read",
+    image: "/article/foreststore.png",
+    author_image: "employee/IMG_1158.PNG",
+    author_name: "Nomin Sendinu",
+    position: "CEO & Co-founder, Terracode Private Limited",
+    description: "Foreststore is a comprehensive SaaS e-commerce platform designed to empower businesses to create, manage, and scale their online stores with ease and efficiency.",
+    comments: 192,
+    views: "4k",
+    sections: [
+      {
+        title: "Modern Commerce Has Changed. Has Your Business Changed with It? ",
+        content: (
+          <>
+            Selling online is easier than ever but managing a growing online business can quickly become complex. Merchants often must handle products, inventory, orders, payments, deliveries, and customer interactions across multiple disconnected tools, spending valuable time switching between systems instead of focusing on growth. At the same time, customers expect a seamless experience wherever they shop whether through a website, mobile device. The challenge is no longer simply how to sell online, but how to manage everything that comes after the first sale. Foreststore brings the essential parts of e-commerce together in one connected platform, helping merchants manage their store, inventory, orders, payments, delivery, and business performance from one place. <b className="font-bold text-gray">Instead of managing multiple tools, merchants can focus on managing and growing their business.</b>
+          </>
+        )
+      },
+      {
+        subtitle: "The Foreststore Vision: ",
+        content: (
+          <>
+            "One calm home for your store — sell wherever your customers already are, without needing to be technical to run it."
+          </>
+        )
+      },
+      {
+        content: "That philosophy extends beyond convenience. It fundamentally changes how businesses operate by bringing the essential parts of modern commerce together into one connected platform."
+      },
+      {
+        title: "Meet Foreststore",
+        content: (
+          <>
+            <b className="font-bold text-white">Foreststore</b> is a Software-as-a-Service (SaaS) e-commerce platform built by <b className="font-bold text-white">Terracode</b> for businesses that want to launch, manage, and scale online commerce without depending on a dedicated technical team.
+          </>
+        )
+      },
+      {
+        content: "Unlike platforms that focus strictly on building a storefront, Foreststore is designed to support the complete operational journey of an e-commerce business. A single login provides access to product management, inventory tracking, order processing, payments, customer information, delivery operations, business analytics, staff management, and mobile administration. Every merchant operates inside their own secure environment with full data isolation, allowing the platform to scale seamlessly across every stage of growth."
+      },
+      {
+        title: "What Does This Mean for Merchants?",
+        content: (
+          <>
+            For merchants, the biggest benefit is simple: <b className="font-bold text-gray">less time managing disconnected systems and more time growing the business.</b>
+          </>
+        )
+      },
+      {
+        content: "Foreststore brings important parts of daily commerce operations into one connected platform, helping merchants: "
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Manage more from one place:</b> products, inventory, orders, payments, delivery, and business operations
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Reduce manual work:</b> spend less time moving between multiple tools and managing disconnected workflows
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Sell across more channels:</b> manage different ways of selling while keeping core business operations connected
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Stay in control:</b> get better visibility into orders, stock, payments, and overall business activity
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Make smarter decisions:</b> use built-in analytics and business insights instead of relying only on guesswork
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Manage the business on the go:</b> stay connected through the web dashboard and mobile admin app
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Scale with less complexity:</b> grow products, orders, channels, and operations without immediately needing to add more disconnected systems
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">In simple terms, Foreststore helps merchants spend less time managing software and more time serving customers, improving operations, and growing their business.</b>
+          </>
+        )
+      },
+      {
+        title: "Who Is Foreststore Built For?",
+        content: (
+          <>
+            <b className="font-bold text-gray">Small Business Owners & Solo Sellers:</b> Run your entire catalog, order processing, and marketing from one calm, clear dashboard instead of ten disconnected tools.
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Growing & Multi-Channel Brands:</b> Keep every order, customer interaction, and stock count automatically synchronized across every channel where you sell.
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Agencies & Developers:</b> Build and manage store fleets for multiple clients with high grade security, client data isolation, and dedicated custom developer toolkits.
+          </>
+        )
+      },
+      {
+        title: "Business Operations Made Simple",
+        content: "Most businesses start by solving one problem at a time. They choose a web builder, add a third-party inventory plugin, connect an external shipping API, use separate payment gateways, and extract reports into Excel. Foreststore replaces this fragmented approach with a unified foundation centred on business outcomes."
+      },
+      {
+        subtitle: "1. Launch a Store Without Technical Complexity",
+        content: "Launching an online store should never require months of custom development or a dedicated technical team."
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">No-Code Storefront Builder:</b> Launch a modern, mobile-responsive online store using a theme-based builder that automatically syncs with your product catalog.
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Custom Domains & Multilingual:</b> Connect your own domain and expand globally with built-in multi-language store support.
+          </>
+        )
+      },
+      {
+        subtitle: "2. A Scalable Product Catalog",
+        content: "Manage complex product structures with ease:"
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Rich Product Variants:</b> Configure multiple variants, options, categories, and curated collections.
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Gift Cards & Promotions:</b> Issue and manage digital gift cards alongside standard physical items.
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Multi-Channel Pricing:</b> Customize channel-specific pricing, currencies, and tax structures.
+          </>
+        )
+      },
+      {
+        subtitle: "3. Real-Time, Multi-Location Inventory",
+        content: "Selling products that aren't in stock ruins customer trust faster than almost anything else. Foreststore provides multi-location tracking to monitor stock levels across different warehouses or retail points. Every stock adjustment, shipment, and return is tracked with audit history, preventing overselling across channels through real-time synchronization upon order placement."
+      },
+      {
+        title: "Order Management & Flexible Payments",
+        content: "Receiving an order is only the beginning of the customer journey. What happens afterward determines whether that customer returns."
+      },
+      {
+        content: "Foreststore structures the entire order lifecycle order placement, confirmation, fulfillment, payment-evidence review, draft orders, and refunds inside a single, unified workflow: "
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Credit & Debit Cards:</b> Support for card gateway payments with integrated order confirmation.
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Cash on Delivery (COD):</b> Integrated directly into order fulfillment and courier tracking status.
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Bank Transfers:</b> Includes photo-proof payment review, allowing merchants to verify bank transfer receipts directly inside the order review screen.
+          </>
+        )
+      },
+      {
+        subtitle: "Transparent Subscription & Usage Billing",
+        content: "Foreststore features a transparent merchant subscription system built around modern needs: clear tier plans, usage-based add-ons (including AI credits), invoicing, upgrades/downgrades, and automated renewals."
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Pay for what you need, when you need it with no hidden contracts.</b>
+          </>
+        )
+      },
+      {
+        title: "Delivery & Logistics: A Courier Marketplace Inside Your Dashboard",
+        content: "Many platforms treat shipping as an afterthought, leaving merchants to handle courier negotiations and tracking in separate tabs."
+      },
+      {
+        content: (
+          <>
+            Foreststore bridges this gap with an <b className="font-bold text-gray">Integrated Courier Marketplace.</b> Merchants can browse available courier partners, review rates and terms, and apply directly from inside the dashboard. Once dispatched, orders are tracked end-to-end within the same system, ensuring both merchant and buyer stay informed without copying and pasting addresses into external portals.
+          </>
+        )
+      },
+      {
+        title: "Business Decisions Backed by Data, Not Guesswork",
+        content: "Growth decisions become clear when you understand what is happening inside your business. Foreststore includes deep, built-in analytics right out of the box eliminating the need for third-party reporting add-ons."
+      },
+      {
+        content: "By consolidating sales channels, Foreststore gives you a complete view of your entire business performance: "
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Revenue Metrics:</b> Total revenue performance, average order value, and business forecasting.
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Channel Performance:</b> Real-time performance insights across your available sales channels.
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Product & Inventory Insights:</b> Top-performing products, low-performing stock, customer growth trends, and fulfillment statistics.
+          </>
+        )
+      },
+      {
+        title: "Run Your Business from Anywhere",
+        content: "Modern store owners are rarely stuck behind a desk all day."
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Mobile Admin App (iOS/Android):</b> Monitor sales, review new orders, update catalog items, receive instant push notifications, and check stock levels straight from your phone.
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Configurable Merchant AI Assistant (iOS/Android):</b> Access an AI-assisted merchant tool (currently operational via Telegram) that assists with daily operational workflows, quick store activity lookups, and operational query testing.
+          </>
+        )
+      },
+      {
+        title: "Built for Technical Flexibility & Extensibility",
+        content: "While non-technical merchants can run their entire business through no-code tools, Foreststore is also engineered to give agencies, developers, and technical partners maximum flexibility: "
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Developer Storefront Kit:</b> Build fully custom, bespoke frontends (headless commerce) while relying on Foreststore's backend for catalog, inventory, order, and payment processing.
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">API Access & Role Permissions:</b> Secure API keys for headless integrations and finegrained role-based staff permissions to control team access safely.
+          </>
+        )
+      },
+      {
+        title: "Why Foreststore Stands Out",
+        content: (
+          <>
+            Where traditional setups force you to juggle five to ten disconnected tools, Foreststore gives you <b className="font-bold text-gray">one single platform and unified login.</b>
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            Instead of exporting CSV files to third-party logistics portals, you gain access to a <b className="font-bold text-gray">built-in Courier Partner Marketplace.</b>
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            Instead of messy spreadsheets, you have <b className="font-bold text-gray">deep, real-time analytics and forecasting.</b>
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            And instead of complex custom setups, you get <b className="font-bold text-gray">both no-code simplicity and developer grade headless capabilities.</b>
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            Most platforms help you <i className="font-italic text-gray">build a storefront.</i>
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-white">Foreststore helps you run a business.</b>
+          </>
+        )
+      },
+      {
+        title: "Future Roadmap (Upcoming Capabilities)",
+        content: "Foreststore is continuously evolving. While core platform features are live and operational today, the platform has a clear public roadmap for upcoming capabilities: "
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">External Marketplace Sync:</b> Direct synchronization with platforms like Daraz, AliExpress, and eBay.
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Shopper-Facing AI Commerce:</b> Live conversational shopping chat widgets directly on customer-facing storefronts.
+          </>
+        )
+      },
+      {
+        content: (
+          <>
+            <b className="font-bold text-gray">Social Commerce & POS:</b> Deeper social selling integrations (TikTok and Instagram Shop), B2B/wholesale management, subscription products, and native Point-of-Sale (POS) systems.
+          </>
+        )
+      }
+    ]
+  },
 
   // {
 
@@ -244,9 +615,9 @@ export default function NArticle() {
       setSidebarArticles(
         articlesData
           .filter(article => article.id !== selectedArticle.id)
-          .map(article => 
-            article.id === previousArticle.id 
-              ? previousArticle  
+          .map(article =>
+            article.id === previousArticle.id
+              ? previousArticle
               : article
           ));
       // Scroll to top when changing article
@@ -257,28 +628,31 @@ export default function NArticle() {
   // Check if there are more articles to display
   const hasMoreArticles = sidebarArticles.length > 0;
 
-    return (
+  return (
     <div className="bg-black text-white font-lufga xl:my-10 mb-20">
       {/* Main Container */}
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 px-6 py-12">
-        
+
         {/* Left Content */}
         <div className="lg:col-span-2 space-y-8">
           <h1 className="text-3xl md:text-[45px] mb-4 text-[#FDA10A]">
             {currentArticle.title}
           </h1>
+          <h2 className="text-2xl md:text-[35px] mb-4 text-[#A4A4A4]">
+            {currentArticle.subtitle}
+          </h2>
           <div className="flex justify-between">
-          <div className="flex items-center text-[#A4A4A4] space-x-6 ">
-            <span className="flex items-center gap-3 xl:text-2xl">
-              <Calendar size={22} /> {currentArticle.date}
-            </span>
-            <span className="flex items-center gap-3 xl:text-2xl">
-              <Clock size={22} /> {currentArticle.time}
-            </span>
-          </div>
-          <span className="flex items-center gap-3 xl:text-2xl mr-5 text-[#FDA10A]">
+            <div className="flex items-center text-[#A4A4A4] space-x-6 ">
+              <span className="flex items-center gap-3 xl:text-2xl">
+                <Calendar size={22} /> {currentArticle.date}
+              </span>
+              <span className="flex items-center gap-3 xl:text-2xl">
+                <Clock size={22} /> {currentArticle.time}
+              </span>
+            </div>
+            <span className="flex items-center gap-3 xl:text-2xl mr-5 text-[#FDA10A]">
               <Share size={22} /> Share
-          </span>
+            </span>
           </div>
           <img
             src={currentArticle.image}
@@ -302,7 +676,15 @@ export default function NArticle() {
           {currentArticle.sections.map((section, idx) => (
             <div key={idx}>
               <h2 className="text-3xl mb-4">{section.title}</h2>
+              <h2 className="text-xl mb-4">{section.subtitle}</h2>
               <p className="text-[#A4A4A4] xl:text-2xl ">{section.content}</p>
+              {section.image && (
+                <img
+                  src={section.image}
+                  alt={section.imageAlt || section.title || currentArticle.title}
+                  className="rounded-xl w-full my-6"
+                />
+              )}
             </div>
           ))}
         </div>
@@ -312,7 +694,7 @@ export default function NArticle() {
           <h3 className="text-3xl text-center text-[#FDA10A]">
             More Articles
           </h3>
-           {hasMoreArticles ? (
+          {hasMoreArticles ? (
             // Display the list of articles if there are any
             sidebarArticles.map((item) => (
               <div
@@ -324,14 +706,14 @@ export default function NArticle() {
                 <div className="flex flex-row gap-4 items-center justify-between mt-4">
                   <div className="flex flex-row gap-4 items-center justify-center ">
                     <div className="backdrop-blur-sm bg-white/10 rounded-full px-3 py-1 flex items-center gap-4">
-                      <Send className="w-4 h-4"/>{item.views}
+                      <Send className="w-4 h-4" />{item.views}
                     </div>
                     <div className="backdrop-blur-sm bg-white/10 rounded-full px-3 py-1 flex items-center gap-4">
-                      <Heart className="w-4 h-4"/> {item.comments}
+                      <Heart className="w-4 h-4" /> {item.comments}
                     </div>
                   </div>
                   {/* Read More Arrow with Click Handler */}
-                  <div 
+                  <div
                     className="hover:bg-white transition-colors rounded-full cursor-pointer"
                     onClick={() => handleReadMore(item.id)}
                   >
@@ -344,9 +726,9 @@ export default function NArticle() {
             // Display "No more articles" card when there are no additional articles
             <div className="bg-neutral-900 p-6 rounded-2xl shadow text-center w-full">
               <div className="mb-4">
-                <img 
-                  src="/article/no-content.png" 
-                  alt="No more articles" 
+                <img
+                  src="/article/no-content.png"
+                  alt="No more articles"
                   className="w-24 h-24 mx-auto opacity-80"
                   onError={(e) => {
                     // Fallback if image doesn't exist

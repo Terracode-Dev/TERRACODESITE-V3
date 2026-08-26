@@ -597,6 +597,8 @@ export default function NArticle() {
   const [currentArticle, setCurrentArticle] = useState(articlesData[0]);
   // State to manage sidebar articles
   const [sidebarArticles, setSidebarArticles] = useState<SidebarItem[]>([]);
+  // Whether the share link was just copied to the clipboard
+  const [shareCopied, setShareCopied] = useState(false);
   // Initialize sidebar articles on first render
   useEffect(() => {
     // Initially, show all articles except the main one in the sidebar
@@ -628,6 +630,30 @@ export default function NArticle() {
   // Check if there are more articles to display
   const hasMoreArticles = sidebarArticles.length > 0;
 
+  // Share the current article via the native share sheet, falling back to copying the link
+  const handleShare = async () => {
+    const shareUrl = window.location.href;
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: currentArticle.title,
+          text: currentArticle.description,
+          url: shareUrl,
+        });
+      } catch {
+        // User cancelled the share sheet; nothing to do
+      }
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setShareCopied(true);
+      setTimeout(() => setShareCopied(false), 2000);
+    } catch {
+      // Clipboard access unavailable; nothing to do
+    }
+  };
+
   return (
     <div className="bg-black text-white font-lufga xl:my-10 mb-20">
       {/* Main Container */}
@@ -650,9 +676,13 @@ export default function NArticle() {
                 <Clock size={22} /> {currentArticle.time}
               </span>
             </div>
-            <span className="flex items-center gap-3 xl:text-2xl mr-5 text-[#FDA10A]">
-              <Share size={22} /> Share
-            </span>
+            <button
+              type="button"
+              onClick={handleShare}
+              className="flex items-center gap-3 xl:text-2xl mr-5 text-[#FDA10A] bg-transparent border-none cursor-pointer hover:opacity-80 transition"
+            >
+              <Share size={22} /> {shareCopied ? "Link copied!" : "Share"}
+            </button>
           </div>
           <img
             src={currentArticle.image}

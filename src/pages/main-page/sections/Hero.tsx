@@ -3,8 +3,13 @@ import Navbar from "@/components/navbar";
 import { ScrollingEffect,  type ScrollingEffectRef } from "@/components/scrollEffect";
 import { Link,  useNavigate } from "@tanstack/react-router";
 import { ArrowRightCircle, Heart,  LucideLightbulb, Rocket, Send } from "lucide-react";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion } from 'framer-motion'
+import { articlesData } from "@/pages/Article-page/NewArticle";
+import { loadLikedArticleIds } from "@/lib/articleLikes";
+
+// The most recently published article, used to feature live stats on the homepage teaser
+const latestArticle = articlesData[articlesData.length - 1];
 
 const stack = [
   {
@@ -49,6 +54,9 @@ const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const scrollRef = useRef<ScrollingEffectRef>(null);
   const navigate =useNavigate();
+  // Live like count for the featured article, kept in sync with the articles page via localStorage
+  const [likedArticleIds] = useState(() => loadLikedArticleIds());
+  const latestArticleLikes = latestArticle.comments + (likedArticleIds.has(latestArticle.id) ? 1 : 0);
 
   const handleClick = () => {
   navigate({ to: '/contact' }) // e.g., '/about', '/dashboard', etc.
@@ -125,20 +133,20 @@ const HeroSection: React.FC = () => {
             <Link to="/articles" className="text-white">
             <div className=" backdrop-blur-sm bg-white/10  rounded-2xl p-8 max-w-md w-full text-white shadow-lg">
                 <h1 className="text-3xl  mb-4">Latest Articles & News</h1>
-                <img className="object-cover w-full h-full mb-4 rounded-md" src="article/Mask group (1).png" alt="Vector" />
+                <img className="object-cover w-full h-full mb-4 rounded-md" src="article/Hero-A2.png" alt="Vector" />
                 <h1 className="text-lg">
-                    Fueled by Passion. Built for Impact.
+                    Modern Commerce. Simplified.
                 </h1>
                 <p className="text-sm text-neutral-400">
-                    12 June 2025
+                    26 August 2026
                 </p>
                 <div className="flex flex-row gap-4 items-center justify-between mt-4">
                   <div className="flex flex-row gap-4 items-center justify-center ">
                     <div className="backdrop-blur-sm bg-white/10 rounded-full px-3 py-1  flex items-center gap-4">
-                       <Send className="w-4 h-4"/> 10
+                       <Send className="w-4 h-4"/> {latestArticle.views}
                     </div>
                     <div className="backdrop-blur-sm bg-white/10 rounded-full px-3 py-1 flex items-center gap-4">
-                       <Heart className="w-4 h-4"/> 10
+                       <Heart className={`w-4 h-4 ${likedArticleIds.has(latestArticle.id) ? "fill-[#FDA10A] text-[#FDA10A]" : ""}`}/> {latestArticleLikes}
                     </div>
                     </div>
                     {/* Read More Arrow */}

@@ -11,6 +11,9 @@ interface ServicePageProps {
   image: string;
   name?: string;
   selectedCategory?: string;
+  imageHeightClassName?: string;
+  imageObjectPositionClassName?: string;
+  imageFitClassName?: string;
 }
 
 const ServicePage: React.FC<ServicePageProps> = ({
@@ -18,7 +21,10 @@ const ServicePage: React.FC<ServicePageProps> = ({
   title,
   image,
   name,
-  selectedCategory
+  selectedCategory,
+  imageHeightClassName = "h-[31vh] md:h-[70vh]",
+  imageObjectPositionClassName = "object-center",
+  imageFitClassName = "object-cover"
 }) => {
   const navigate = useNavigate();
   
@@ -43,12 +49,12 @@ const ServicePage: React.FC<ServicePageProps> = ({
         </div>
         {/* team members Images */}
         
-        <div className="relative rounded-3xl h-[31vh] md:h-[70vh] w-full overflow-hidden mt-10">
+        <div className={`relative rounded-3xl ${imageHeightClassName} w-full overflow-hidden mt-10`}>
         {/* Image */}
-        <img  
+        <img
         src={image}
         alt={title}
-        className="object-cover w-full h-full" />
+        className={`${imageFitClassName} ${imageObjectPositionClassName} w-full h-full`} />
         </div>
          </div>
        </div>

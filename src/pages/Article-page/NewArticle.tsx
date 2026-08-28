@@ -1,5 +1,6 @@
 import { Calendar, Clock, Heart, Send, Share } from "lucide-react";
-import { useState, useEffect, type ReactNode } from "react";
+import { useMemo, useState, type ReactNode } from "react";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { loadLikedArticleIds, saveLikedArticleIds } from "@/lib/articleLikes";
 
 interface Section {
@@ -12,6 +13,7 @@ interface Section {
 
 interface SidebarItem {
   id: number;
+  slug: string;
   title: string;
   subtitle?: string;
   date?: string;
@@ -30,11 +32,12 @@ interface SidebarItem {
 export const articlesData: SidebarItem[] = [
   {
     id: 0,
+    slug: "our-story",
     title: "Our Story So Far",
     date: "2 August 2025",
     time: "10 mins read",
-    image: "article/TC1-Articale.png",
-    author_image: "employee/IMG_1158.PNG",
+    image: "/article/TC1-Articale.png",
+    author_image: "/employee/IMG_1158.PNG",
     author_name: "Nomin Sendinu",
     position: "CEO & Co-founder, Terracode Private Limited",
     description: "Main article about AI redefining software development",
@@ -95,11 +98,12 @@ export const articlesData: SidebarItem[] = [
 
   {
     id: 1,
+    slug: "merkor",
     title: "Merkor: Turning Business Data Into Clear Direction",
     date: "21 August 2026",
     time: "10 mins read",
     image: "/article/ME-Articale.png",
-    author_image: "employee/IMG_1158.PNG",
+    author_image: "/employee/IMG_1158.PNG",
     author_name: "Nomin Sendinu",
     position: "CEO & Co-founder, Terracode Private Limited",
     description: "Discover how Merkor, our innovative business intelligence tool, transforms complex data into actionable insights for smarter decision-making.",
@@ -188,11 +192,12 @@ export const articlesData: SidebarItem[] = [
 
   {
     id: 2,
+    slug: "foreststore",
     title: "Foreststore: SaaS E-commerce Platform to Build, Manage, and Scale Online Stores",
     date: "24 August 2026",
     time: "10 mins read",
     image: "/article/foreststore.png",
-    author_image: "employee/IMG_1158.PNG",
+    author_image: "/employee/IMG_1158.PNG",
     author_name: "Nomin Sendinu",
     position: "CEO & Co-founder, Terracode Private Limited",
     description: "Foreststore is a comprehensive SaaS e-commerce platform designed to empower businesses to create, manage, and scale their online stores with ease and efficiency.",
@@ -657,41 +662,33 @@ export const articlesData: SidebarItem[] = [
   // }
 ];
 
-export default function NArticle() {
-  // State to track current article
-  const [currentArticle, setCurrentArticle] = useState(articlesData[0]);
-  // State to manage sidebar articles
-  const [sidebarArticles, setSidebarArticles] = useState<SidebarItem[]>([]);
+interface NArticleProps {
+  // Slug of the article to display; falls back to the first article when omitted/unknown
+  slug?: string;
+}
+
+export default function NArticle({ slug }: NArticleProps) {
+  const navigate = useNavigate();
+  // The article to display is derived from the URL slug, so each article gets its own address
+  const currentArticle = useMemo(
+    () => articlesData.find(article => article.slug === slug) ?? articlesData[0],
+    [slug]
+  );
   // Whether the share link was just copied to the clipboard
   const [shareCopied, setShareCopied] = useState(false);
   // IDs of articles the visitor has liked, persisted in localStorage
   const [likedArticleIds, setLikedArticleIds] = useState<Set<number>>(() => loadLikedArticleIds());
-  // Initialize sidebar articles on first render
-  useEffect(() => {
-    // Initially, show all articles except the main one in the sidebar
-    setSidebarArticles(articlesData.filter(article => article.id !== currentArticle.id));
-  }, []);
+  // Every other article, shown in the sidebar
+  const sidebarArticles = useMemo(
+    () => articlesData.filter(article => article.id !== currentArticle.id),
+    [currentArticle]
+  );
 
-  // Function to handle clicking on "Read More"
-  const handleReadMore = (articleId: number) => {
-    // Find the clicked article
-    const selectedArticle = articlesData.find(article => article.id === articleId);
-    if (selectedArticle) {
-      // Store the current article before replacing it
-      const previousArticle = currentArticle;
-      // Update the main article
-      setCurrentArticle(selectedArticle);
-      setSidebarArticles(
-        articlesData
-          .filter(article => article.id !== selectedArticle.id)
-          .map(article =>
-            article.id === previousArticle.id
-              ? previousArticle
-              : article
-          ));
-      // Scroll to top when changing article
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+  // Navigate to the clicked article's own URL
+  const handleReadMore = (articleSlug: string) => {
+    navigate({ to: '/articles/$slug', params: { slug: articleSlug } });
+    // Scroll to top when changing article
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Check if there are more articles to display
@@ -829,7 +826,13 @@ export default function NArticle() {
                 key={item.id}
                 className="bg-neutral-900 p-4 rounded-2xl shadow hover:shadow-lg transition"
               >
-                <h4 className="mb-2 text-2xl text-[#FDA10A]">{item.title}</h4>
+                <Link
+                  to="/articles/$slug"
+                  params={{ slug: item.slug }}
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                  <h4 className="mb-2 text-2xl text-[#FDA10A] hover:underline">{item.title}</h4>
+                </Link>
                 <p className="text-[#A4A4A4] text-xl mb-3">{item.description}</p>
                 <div className="flex flex-row gap-4 items-center justify-between mt-4">
                   <div className="flex flex-row gap-4 items-center justify-center ">
@@ -850,7 +853,7 @@ export default function NArticle() {
                   {/* Read More Arrow with Click Handler */}
                   <div
                     className="hover:bg-white transition-colors rounded-full cursor-pointer"
-                    onClick={() => handleReadMore(item.id)}
+                    onClick={() => handleReadMore(item.slug)}
                   >
                     <img src="/Property 23.png" alt="Read More" />
                   </div>

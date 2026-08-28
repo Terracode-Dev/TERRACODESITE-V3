@@ -74,7 +74,7 @@ export default function Navbar() {
       <div className="w-full relative flex items-center justify-between px-4 sm:px-8 lg:px-[60px] text-xl font-lufga container mx-auto">
         <Link to="/">
           {/* <img className={showChristmas? "relative w-20 h-14 sm:w-[135px] sm:h-[90px] -top-3" :"w-20 h-12 sm:w-[102px] sm:h-[65px]"} alt="Logo" src={showChristmas ? "hero/chrilogo.png" : "hero/Frame 9.png"} /> */}
-          <img className="w-20 h-12 sm:w-[102px] sm:h-[65px]" alt="Logo" src= "hero/Frame 9.png" />
+          <img className="w-20 h-12 sm:w-[102px] sm:h-[65px]" alt="Logo" src="/hero/Frame 9.png" />
         </Link>
 
         {/* Desktop Menu */}

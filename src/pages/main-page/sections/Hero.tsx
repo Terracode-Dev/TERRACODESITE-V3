@@ -97,8 +97,8 @@ const HeroSection: React.FC = () => {
                 e.currentTarget.playbackRate = 0.4; // 75% speed
             }}
       >
-        <source src="hero/Hero.mp4" type="video/mp4" />
-        <source src="hero/Hero.webm" type="video/webm" />
+        <source src="/hero/Hero.mp4" type="video/mp4" />
+        <source src="/hero/Hero.webm" type="video/webm" />
         Your browser does not support the video tag.
       </video>
 
@@ -130,10 +130,14 @@ const HeroSection: React.FC = () => {
                 <h1 className="text-lg xl:text-2xl text-nowrap">Build Your Ideas!</h1>
               </div>
             </div>
-            <Link to="/articles" className="text-white">
+            <Link
+              to="/articles/$slug"
+              params={{ slug: latestArticle.slug }}
+              className="text-white"
+            >
             <div className=" backdrop-blur-sm bg-white/10  rounded-2xl p-8 max-w-md w-full text-white shadow-lg">
                 <h1 className="text-3xl  mb-4">Latest Articles & News</h1>
-                <img className="object-cover w-full h-full mb-4 rounded-md" src="article/Hero-A2.png" alt="Vector" />
+                <img className="object-cover w-full h-full mb-4 rounded-md" src="/article/Hero-A2.png" alt="Vector" />
                 <h1 className="text-lg">
                     Modern Commerce. Simplified.
                 </h1>

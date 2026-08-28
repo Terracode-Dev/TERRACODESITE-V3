@@ -5,7 +5,12 @@ import Navbar from "@/components/navbar"
 import { motion } from "framer-motion"
 import NArticle from "./NewArticle"
 
-const Page = () => {
+interface PageProps {
+  // Slug of the article to display; omitted on /articles shows the default (first) article
+  slug?: string
+}
+
+const Page = ({ slug }: PageProps) => {
   return (
     <div className="mt-10">
       <motion.div
@@ -18,7 +23,7 @@ const Page = () => {
       <Navbar/>
       {/* <Hero/> */}
       {/* <Article/> */}
-     <NArticle />
+     <NArticle slug={slug} />
       </motion.div>
     </div>
   )

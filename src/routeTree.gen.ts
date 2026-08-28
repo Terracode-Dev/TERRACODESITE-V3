@@ -33,6 +33,7 @@ import { Route as ArticlesRouteImport } from './routes/articles'
 import { Route as AiSolutionsRouteImport } from './routes/ai-solutions'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ArticlesSlugRouteImport } from './routes/articles.$slug'
 
 const WebsiteSolutionsRoute = WebsiteSolutionsRouteImport.update({
   id: '/website-solutions',
@@ -154,12 +155,17 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArticlesSlugRoute = ArticlesSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => ArticlesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-solutions': typeof AiSolutionsRoute
-  '/articles': typeof ArticlesRoute
+  '/articles': typeof ArticlesRouteWithChildren
   '/business-softwares': typeof BusinessSoftwaresRoute
   '/cancel-page': typeof CancelPageRoute
   '/career': typeof CareerRoute
@@ -180,12 +186,13 @@ export interface FileRoutesByFullPath {
   '/test': typeof TestRoute
   '/ux-design': typeof UxDesignRoute
   '/website-solutions': typeof WebsiteSolutionsRoute
+  '/articles/$slug': typeof ArticlesSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-solutions': typeof AiSolutionsRoute
-  '/articles': typeof ArticlesRoute
+  '/articles': typeof ArticlesRouteWithChildren
   '/business-softwares': typeof BusinessSoftwaresRoute
   '/cancel-page': typeof CancelPageRoute
   '/career': typeof CareerRoute
@@ -206,13 +213,14 @@ export interface FileRoutesByTo {
   '/test': typeof TestRoute
   '/ux-design': typeof UxDesignRoute
   '/website-solutions': typeof WebsiteSolutionsRoute
+  '/articles/$slug': typeof ArticlesSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/ai-solutions': typeof AiSolutionsRoute
-  '/articles': typeof ArticlesRoute
+  '/articles': typeof ArticlesRouteWithChildren
   '/business-softwares': typeof BusinessSoftwaresRoute
   '/cancel-page': typeof CancelPageRoute
   '/career': typeof CareerRoute
@@ -233,6 +241,7 @@ export interface FileRoutesById {
   '/test': typeof TestRoute
   '/ux-design': typeof UxDesignRoute
   '/website-solutions': typeof WebsiteSolutionsRoute
+  '/articles/$slug': typeof ArticlesSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -261,6 +270,7 @@ export interface FileRouteTypes {
     | '/test'
     | '/ux-design'
     | '/website-solutions'
+    | '/articles/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -287,6 +297,7 @@ export interface FileRouteTypes {
     | '/test'
     | '/ux-design'
     | '/website-solutions'
+    | '/articles/$slug'
   id:
     | '__root__'
     | '/'
@@ -313,13 +324,14 @@ export interface FileRouteTypes {
     | '/test'
     | '/ux-design'
     | '/website-solutions'
+    | '/articles/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AiSolutionsRoute: typeof AiSolutionsRoute
-  ArticlesRoute: typeof ArticlesRoute
+  ArticlesRoute: typeof ArticlesRouteWithChildren
   BusinessSoftwaresRoute: typeof BusinessSoftwaresRoute
   CancelPageRoute: typeof CancelPageRoute
   CareerRoute: typeof CareerRoute
@@ -512,14 +524,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/articles/$slug': {
+      id: '/articles/$slug'
+      path: '/$slug'
+      fullPath: '/articles/$slug'
+      preLoaderRoute: typeof ArticlesSlugRouteImport
+      parentRoute: typeof ArticlesRoute
+    }
   }
 }
+
+interface ArticlesRouteChildren {
+  ArticlesSlugRoute: typeof ArticlesSlugRoute
+}
+
+const ArticlesRouteChildren: ArticlesRouteChildren = {
+  ArticlesSlugRoute: ArticlesSlugRoute,
+}
+
+const ArticlesRouteWithChildren = ArticlesRoute._addFileChildren(
+  ArticlesRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AiSolutionsRoute: AiSolutionsRoute,
-  ArticlesRoute: ArticlesRoute,
+  ArticlesRoute: ArticlesRouteWithChildren,
   BusinessSoftwaresRoute: BusinessSoftwaresRoute,
   CancelPageRoute: CancelPageRoute,
   CareerRoute: CareerRoute,

@@ -2,6 +2,7 @@ import { Calendar, Clock, Heart, Send, Share } from "lucide-react";
 import { useMemo, useState, type ReactNode } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { loadLikedArticleIds, saveLikedArticleIds } from "@/lib/articleLikes";
+import { AnimatePresence, motion } from "framer-motion";
 
 interface Section {
   title?: string;
@@ -737,7 +738,15 @@ export default function NArticle({ slug }: NArticleProps) {
   };
 
   return (
-    <div className="bg-black text-white font-lufga xl:my-10 mb-20">
+    <AnimatePresence mode="wait" initial={false}>
+    <motion.div
+      key={currentArticle.slug}
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -16 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+      className="bg-black text-white font-lufga xl:my-10 mb-20"
+    >
       {/* Main Container */}
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 px-6 py-12">
 
@@ -887,6 +896,7 @@ export default function NArticle({ slug }: NArticleProps) {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
+    </AnimatePresence>
   );
 }

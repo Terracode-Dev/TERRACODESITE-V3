@@ -20,7 +20,7 @@ const Aboutus = () => {
             </p>
             <Link to="/about">
               <h1 className="text-lg md:text-2xl text-[#f56d04] mt-4 hover:text-[#FDA10A]">
-                Learn More →
+                Learn more about Terracode →
               </h1>
             </Link>
         </motion.div>

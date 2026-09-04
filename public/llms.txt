@@ -1,0 +1,27 @@
+# Terracode
+
+> Terracode is a software development company in Colombo, Sri Lanka, building custom software, AI solutions, websites, mobile applications, cloud systems, and user experiences for startups and enterprises.
+
+## Main pages
+
+- [Homepage](https://www.terracodedev.com/): Company overview, services, process, and contact options.
+- [About Terracode](https://www.terracodedev.com/about): Information about the company and team.
+- [Portfolio](https://www.terracodedev.com/digitalportfolio): Selected software and digital product projects.
+- [Articles](https://www.terracodedev.com/articles): Terracode articles and product insights.
+- [Contact](https://www.terracodedev.com/contact): Contact details and project enquiries.
+- [Careers](https://www.terracodedev.com/career): Career opportunities at Terracode.
+
+## Services
+
+- [AI Solutions](https://www.terracodedev.com/ai-solutions): Custom AI models, automation, analytics, and integrations.
+- [Business Software](https://www.terracodedev.com/business-softwares): Custom ERP, CRM, inventory, and operational systems.
+- [Website Solutions](https://www.terracodedev.com/website-solutions): Responsive, performant, and SEO-ready websites.
+- [Mobile App Development](https://www.terracodedev.com/mobile-apps): Native and cross-platform iOS and Android applications.
+- [Cloud Solutions](https://www.terracodedev.com/cloud-solutions): Cloud migration, infrastructure, DevOps, and monitoring.
+- [UX Design](https://www.terracodedev.com/ux-design): User research, prototyping, accessibility, and usability testing.
+
+## Contact
+
+- Email: [hello@terracodedev.com](mailto:hello@terracodedev.com)
+- [LinkedIn](https://www.linkedin.com/company/terracodedev)
+- [GitHub](https://github.com/Terracode-Dev)

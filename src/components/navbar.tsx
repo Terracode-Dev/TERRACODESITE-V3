@@ -130,10 +130,10 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-         <Link to="/contact">
+         <Link to="/contact" aria-label="Get a quote" className="hidden xl:block">
           <div 
             className={`
-              hidden xl:flex relative cursor-pointer
+              flex relative cursor-pointer
               overflow-hidden
               rounded-[32px]
               hover:scale-105
@@ -164,7 +164,11 @@ export default function Navbar() {
 
         {/* Mobile Hamburger */}
         <button
+          type="button"
           onClick={toggleMenu}
+          aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
           className="xl:hidden p-2 rounded-full bg-[#141414] text-white hover:bg-black transition-colors"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -173,6 +177,9 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
+        id="mobile-navigation"
+        aria-hidden={!isMenuOpen}
+        inert={!isMenuOpen}
         className={`xl:hidden fixed inset-0 z-50 transition-opacity duration-500 ${
           isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
@@ -186,7 +193,7 @@ export default function Navbar() {
         >
           <div className="flex items-center justify-between p-6 border-b border-gray-700">
             <img className="w-20 h-12" alt="Logo" src="/hero/Frame 9.png" />
-            <button onClick={toggleMenu} className="p-2 rounded-lg text-white hover:bg-black">
+            <button type="button" onClick={toggleMenu} aria-label="Close navigation menu" className="p-2 rounded-lg text-white hover:bg-black">
               <X size={24} />
             </button>
           </div>

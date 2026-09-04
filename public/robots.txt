@@ -75,5 +75,5 @@ Allow: /
 Sitemap: https://www.terracodedev.com/sitemap.xml
 
 # AI/LLM specific files
-# llm.txt: https://www.terracodedev.com/llm.txt
+# llms.txt: https://www.terracodedev.com/llms.txt
 # ai.txt: https://www.terracodedev.com/ai.txt

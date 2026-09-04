@@ -89,7 +89,7 @@ const HeroSection: React.FC = () => {
         muted
         playsInline
         
-        preload="auto"
+        preload="metadata"
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
         onError={(e) => console.error('Video failed to load:', e)}
         onCanPlay={(e) => {
@@ -127,7 +127,7 @@ const HeroSection: React.FC = () => {
               <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
                 
                 <LucideLightbulb className="w-6 h-6 xl:w-10 xl:h-10 text-[#FDA10A] mr-4" />
-                <h1 className="text-lg xl:text-2xl text-nowrap">Build Your Ideas!</h1>
+                <p className="text-lg xl:text-2xl text-nowrap">Build Your Ideas!</p>
               </div>
             </div>
             <Link
@@ -136,11 +136,11 @@ const HeroSection: React.FC = () => {
               className="text-white"
             >
             <div className=" backdrop-blur-sm bg-white/10  rounded-2xl p-8 max-w-md w-full text-white shadow-lg">
-                <h1 className="text-3xl  mb-4">Latest Articles & News</h1>
+                <h2 className="text-3xl  mb-4">Latest Articles & News</h2>
                 <img className="object-cover w-full h-full mb-4 rounded-md" src="/article/Hero-A2.png" alt="Vector" />
-                <h1 className="text-lg">
+                <h3 className="text-lg">
                     Modern Commerce. Simplified.
-                </h1>
+                </h3>
                 <p className="text-sm text-neutral-400">
                     26 August 2026
                 </p>
@@ -169,7 +169,7 @@ const HeroSection: React.FC = () => {
         className="col-span-2 flex flex-col  gap-4 lg:px-10 xl:px-28">
             <div className=" backdrop-blur-md bg-white/10  rounded-full lg:p-4 lg:w-fit xl:p-6 max-w-md xl:w-full text-white shadow-lg flex justify-center items-center flex-row">
                 <Rocket className="xl:w-10 xl:h-10 text-[#FDA10A] mr-4" />
-                <h1 className="xl:text-2xl text-nowrap ">AI-first digital experiences.</h1>
+                <p className="xl:text-2xl text-nowrap ">AI-first digital experiences.</p>
             </div>
             <div className="flex flex-col   mt-8">
                 <h1 className="lg:text-5xl xl:text-6xl font-extralight mb-4 text-[#FDA10A]">Future-Proof<br /> Software.<br /> Built for Impact.</h1>
@@ -190,7 +190,7 @@ const HeroSection: React.FC = () => {
         transition={{ duration: 1.5, delay:0.5, ease: "easeInOut" }}
          className="col-span-1 flex flex-col gap-4">
             <div className="backdrop-blur-md bg-white/10 rounded-2xl p-4 2xl:p-8 max-w-xl w-full text-white shadow-lg transition-colors duration-800 group hover:bg-[#2C2C2C] relative">
-    <h1 className="xl:text-3xl mb-4">Services Overview</h1>
+    <h2 className="xl:text-3xl mb-4">Services Overview</h2>
     <div className="w-full relative flex flex-col items-start justify-start gap-4 text-center xl:text-xl text-gray font-lufga">
       <div className="self-stretch rounded-3xl flex flex-row items-center justify-start py-0 2xl:px-6 gap-4">
         <div className="w-[15px] relative rounded-[50%] bg-amber-600 group-hover:bg-[#f56d04] transition-colors duration-800 h-[15px]" />
@@ -234,19 +234,19 @@ const HeroSection: React.FC = () => {
             <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
             <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
                 <div className="xl:text-3xl font-extrabold text-amber-600 text-nowrap">2 +</div>
-                <h1 className="xl:text-xl text-nowrap ">Number of Years</h1>
+                <p className="xl:text-xl text-nowrap ">Number of Years</p>
             </div>
             <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
             <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none px-1" />
                 <div className="xl:text-3xl font-extrabold text-amber-600 text-nowrap">15+</div>
-                <h1 className="xl:text-xl text-nowrap ">Projects Completed</h1>
+                <p className="xl:text-xl text-nowrap ">Projects Completed</p>
             </div>
             
         </motion.div>
         <div className="col-span-1">
           <div className=" backdrop-blur-md bg-white/10  rounded-3xl p-6 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
            <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />     
-                <h1 className="xl:text-2xl ">The Stack That Powers Innovation.</h1>
+                <h2 className="xl:text-2xl ">The Stack That Powers Innovation.</h2>
           </div>
         </div>
         <div className="col-span-3 flex flex-row">
@@ -282,10 +282,10 @@ const HeroSection: React.FC = () => {
         <div className=" flex flex-col  gap-4 px-4">
             <div className=" backdrop-blur-md bg-white/10  rounded-full max-w-md p-4 w-fit text-white shadow-lg flex justify-start items-start flex-row">
                 <Rocket className="w-4 h-4 text-[#fd630a] mr-4" />
-                <h1 className="text-sm text-nowrap ">AI-first digital experiences.</h1>
+                <p className="text-sm text-nowrap ">AI-first digital experiences.</p>
             </div>
             <div className="flex flex-col gap-4">
-                <h1 className="text-5xl font-extralight  text-[#FDA10A]">Future-Proof<br /> Software.<br /> Built for Impact.</h1>
+                <div className="text-5xl font-extralight text-[#FDA10A]" aria-hidden="true">Future-Proof<br /> Software.<br /> Built for Impact.</div>
                 <p className="text-lg text-gray-400">We craft scalable, user-driven digital solutions that empower startups and enterprises to move faster, smarter, and better.</p>
                 {/* <button
                 
@@ -300,16 +300,16 @@ const HeroSection: React.FC = () => {
                 <div className=" backdrop-blur-md bg-white/10 mt-4 rounded-2xl p-4 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
                 <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
                 <div className="text-xl font-extrabold text-amber-600 text-nowrap">2 +</div>
-                <h1 className="text-xl text-nowrap ">Number of Years</h1>
+                <p className="text-xl text-nowrap ">Number of Years</p>
             </div>
             <div className=" backdrop-blur-md bg-white/10  rounded-2xl p-4 max-w-md w-full text-white shadow-lg flex justify-center items-center flex-row gap-4">
             <div className="absolute bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none px-1" />
                 <div className="text-xl font-extrabold text-amber-600 text-nowrap">15+</div>
-                <h1 className="text-xl text-nowrap ">Projects Completed</h1>
+                <p className="text-xl text-nowrap ">Projects Completed</p>
             </div>
              <div className="">
           <div className=" text-white  flex flex-col justify-center items-center text-center mt-8">
-                <h1 className="text-xl ">The Stack That Powers Innovation.</h1>
+                <h2 className="text-xl ">The Stack That Powers Innovation.</h2>
                 <div className=" bottom-0 left-0 w-full h-[1.5px] opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" />
           </div>
         </div>

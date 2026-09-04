@@ -12,6 +12,7 @@ import { ScrollToTop } from '@/components/scrolltop'
 import Snowfall from '@/components/snow/snow-effect'
 import { useEffect } from 'react'
 import { trackPageView } from '@/lib/analytics'
+import { Seo } from '@/components/Seo'
 
 
 const isChristmasSeason = () => {
@@ -47,13 +48,14 @@ export const Route = createRootRoute({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
+            <Seo pathname={location.pathname} />
             {showChristmas && <Snowfall />}
             <ScrollToTop />
             <CookieBanner />
             {/* <Navbar /> */}
             <Outlet />
             {!isNoFooterPage && <Footer />}
-            <TanStackRouterDevtools />
+            {import.meta.env.DEV && <TanStackRouterDevtools />}
           </motion.div>
         </AnimatePresence>
       </div>

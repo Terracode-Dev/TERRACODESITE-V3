@@ -84,9 +84,36 @@
   
   <url>
     <loc>https://www.terracodedev.com/articles</loc>
-    <lastmod>2025-01-18</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.terracodedev.com/articles/our-story</loc>
+    <lastmod>2025-08-02</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.terracodedev.com/articles/merkor</loc>
+    <lastmod>2026-08-21</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.terracodedev.com/articles/foreststore</loc>
+    <lastmod>2026-08-24</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.terracodedev.com/career</loc>
+  </url>
+
+  <url>
+    <loc>https://www.terracodedev.com/pricing</loc>
+  </url>
+
+  <url>
+    <loc>https://www.terracodedev.com/t&amp;s</loc>
   </url>
 
 </urlset>

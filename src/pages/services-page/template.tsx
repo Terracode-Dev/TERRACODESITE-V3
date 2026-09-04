@@ -40,7 +40,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
         <div className="flex flex-col  gap-4 items-center justify-center">
             <div className=" backdrop-blur-md bg-white/10  rounded-full p-4 max-w-4xl w-full text-white shadow-lg flex justify-center items-center flex-row">
                             <Rocket className=" text-[#FDA10A] mx-4" />
-                            <h1 className="md:text-2xl">{badge}</h1>
+                            <p className="md:text-2xl">{badge}</p>
                         </div>
             <div className="flex flex-col mt-8 items-start  md:items-center gap-6 ">
                 <h1 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A]">{title}</h1>

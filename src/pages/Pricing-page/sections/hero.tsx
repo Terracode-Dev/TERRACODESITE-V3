@@ -8,7 +8,7 @@ const PricingHero = () => {
         <div className="flex flex-col  gap-4 items-center justify-center">
             <div className="z-0 backdrop-blur-md bg-white/10  rounded-full py-4 px-4 md:px-10  text-white shadow-lg flex justify-center items-center flex-row">
                 <Rocket className=" text-[#FDA10A] mr-4" />
-                <h1 className="text-sm md:text-2xl ">Choose the plan that fits your needs and budget.</h1>
+                <p className="text-sm md:text-2xl ">Choose the plan that fits your needs and budget.</p>
             </div>
             <div className="flex flex-col mt-8 items-start md:items-center gap-6 ">
                 <h1 className="text-4xl md:text-6xl font-extralight mb-4 text-[#FDA10A]">Clear and Honest Pricing<br/> <span className="md:ml-30">No Hidden Fees</span></h1>

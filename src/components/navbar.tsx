@@ -107,7 +107,7 @@ export default function Navbar() {
                           className="block px-4 py-2 text-white/90  hover:text-amber-500 md:flex items-center justify-start"
                           onClick={() => setIsDropdownOpen(false)}
                         >
-                          <img src={s.img} className="inline-block mr-4 size-6 "/>
+                          <img src={s.img} alt="" width="24" height="24" className="inline-block mr-4 size-6 "/>
                           {s.name}
                           
                         </Link>

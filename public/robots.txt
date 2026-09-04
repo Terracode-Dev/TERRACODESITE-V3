@@ -1,6 +1,6 @@
 # robots.txt for terracodedev.com
 # Terracode - Crafting Intelligent Digital Futures
-# Last updated: January 2025
+# Last updated: September 2026
 
 # Default rules for all crawlers
 User-agent: *
@@ -10,17 +10,6 @@ Disallow: /api/
 Disallow: /private/
 Disallow: /*.json$
 Disallow: /tmp/
-Crawl-delay: 1
-
-# Google
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-# Bing
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
 
 # Google AI/Gemini
 User-agent: Google-Extended

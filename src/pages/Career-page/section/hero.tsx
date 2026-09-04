@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="flex flex-col  gap-4 items-center justify-center">
             <div className=" backdrop-blur-md bg-white/10  rounded-full py-4 md:px-10  text-white shadow-lg flex justify-center items-center flex-row">
                 <Rocket className=" text-[#FDA10A] mr-4"   />
-                <h1 className="text-md md:text-2xl ">Code with purpose. Design with impact. Grow with people who care.</h1>
+                <p className="text-md md:text-2xl ">Code with purpose. Design with impact. Grow with people who care.</p>
             </div>
             <div className="flex flex-col mt-8 items-start  md:items-center gap-6 ">
                 <h1 className="text-5xl md:text-6xl font-extralight mb-4 text-[#FDA10A]">Build the Future With Us</h1>

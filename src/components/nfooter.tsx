@@ -28,7 +28,7 @@ export default function Footer() {
              <TerraButton onClick={handleClick}/>
         </div>
         <div className="flex flex-col px-4 gap-4 items-start justify-start">
-            <h1 className="font-bold">Company</h1>
+            <h2 className="font-bold">Company</h2>
             <div className="flex flex-col gap-2">
                 <Link to="/contact" className="hover:text-amber-500">Contact Us</Link>
                 <Link to="/career" className="hover:text-amber-500">Careers</Link>
@@ -40,9 +40,9 @@ export default function Footer() {
             </div>
         </div>
         <div className="flex flex-col px-4 gap-4 items-start justify-start">
-            <h1 className="font-bold">Services</h1>
+            <h2 className="font-bold">Services</h2>
             <div className="flex flex-col gap-2">
-                <Link to="/" className="hover:text-amber-500">UI/UX Design</Link>
+                <Link to="/ux-design" className="hover:text-amber-500">UI/UX Design</Link>
                 <Link to="/website-solutions" className="hover:text-amber-500">Web Application</Link>
                 <Link to="/mobile-apps" className="hover:text-amber-500">Mobile Application</Link>
                 <Link to="/ai-solutions" className="hover:text-amber-500">Artificial Intelligence</Link>
@@ -91,8 +91,7 @@ export default function Footer() {
                 <a
                 target="_blank"
                 rel="noopener noreferrer"
-                  href="https://www.linkedin.com/company/terracodedev/⁣
-"
+                  href="https://www.linkedin.com/company/terracodedev"
                   className="flex items-center justify-center gap-2 px-4 py-2 text-white transition-colors rounded-md  hover:bg-gradient-to-r from-[#2162D8] to-[#4BA6F5] ease-in-out duration-300"
                 >
                   <Linkedin className="w-auto h-6" />
@@ -116,7 +115,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-row">
           <div className="flex flex-col px-4 gap-4 items-start justify-start">
-            <h1 className="font-bold">Company</h1>
+            <h2 className="font-bold">Company</h2>
             <div className="flex flex-col gap-2">
                <Link to="/contact">Contact Us</Link>
                 <Link to="/career">Careers</Link>
@@ -128,9 +127,9 @@ export default function Footer() {
             </div>
             </div>
             <div className="flex flex-col px-4 gap-4 items-start justify-start">
-                <h1 className="font-bold">Services</h1>
+                <h2 className="font-bold">Services</h2>
                 <div className="flex flex-col gap-2">
-                   <Link to="/">UI/UX Design</Link>
+                   <Link to="/ux-design">UI/UX Design</Link>
                 <Link to="/website-solutions">Web Application</Link>
                 <Link to="/mobile-apps">Mobile Application</Link>
                 <Link to="/ai-solutions">Artificial Intelligence</Link>

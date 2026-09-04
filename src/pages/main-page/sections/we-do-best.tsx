@@ -59,7 +59,11 @@ export default function WhatWeDoBest() {
             key={index}
             className="flex flex-col items-center text-center bg-[#1A1A1A] rounded-xl p-6 text-white transition-colors duration-800 group gap-6 border-transparent hover:bg-[#2C2C2C] cursor-pointer relative overflow-hidden  xl:h-[470px] justify-between"
           >
-            <Link to={service.link} className="absolute inset-0 z-10" />
+            <Link
+              to={service.link}
+              aria-label={`Learn more about ${service.title}`}
+              className="absolute inset-0 z-10"
+            />
             {/* Top gradient line on hover */}
             {/* <div className="absolute top-0 left-0 w-full h-[1.5px] opacity-0 group-hover:opacity-70 transition-opacity duration-300 bg-gradient-to-r from-transparent via-orange-500 to-transparent pointer-events-none" /> */}
             

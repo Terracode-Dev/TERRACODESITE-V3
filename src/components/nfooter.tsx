@@ -73,6 +73,7 @@ export default function Footer() {
                   <a 
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Visit Terracode on Facebook"
                   href="https://www.facebook.com/terracodedev?mibextid=LQQJ4d"
                   className="flex items-center justify-center gap-2 px-4 py-2 transition-colors  text-white rounded-md hover:bg-gradient-to-r from-[#2162D8] to-[#4BA6F5] ease-in-out duration-300">
                   <Facebook className="w-auto h-6 " />
@@ -82,6 +83,7 @@ export default function Footer() {
                 <a 
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit Terracode on Instagram"
                 href="https://www.instagram.com/terracode.team"
                   className="flex items-center justify-center gap-2 px-4 py-2 text-white  transition-colors rounded-md  hover:bg-gradient-to-tr from-[#FFC23F] via-[#D82DB0] to-[#0140E1] ease-in-out duration-300">
                   <Instagram className="w-auto h-6 " />
@@ -91,6 +93,7 @@ export default function Footer() {
                 <a
                 target="_blank"
                 rel="noopener noreferrer"
+                  aria-label="Visit Terracode on LinkedIn"
                   href="https://www.linkedin.com/company/terracodedev"
                   className="flex items-center justify-center gap-2 px-4 py-2 text-white transition-colors rounded-md  hover:bg-gradient-to-r from-[#2162D8] to-[#4BA6F5] ease-in-out duration-300"
                 >
@@ -159,10 +162,10 @@ export default function Footer() {
                 </div>
             </div>
             <div className=" h-8 flex flex-row items-center justify-center gap-6">
-                <a href="https://www.facebook.com/terracodedev" target="_blank" rel="noopener noreferrer"><Facebook/></a>
+                <a href="https://www.facebook.com/terracodedev" target="_blank" rel="noopener noreferrer" aria-label="Visit Terracode on Facebook"><Facebook/></a>
                 {/* <a href="https://twitter.com/terracodedev" target="_blank" rel="noopener noreferrer"><Twitter/></a> */}
-                <a href="https://www.linkedin.com/company/terracodedev" target="_blank" rel="noopener noreferrer"><Linkedin/></a>
-                <a href="https://instagram.com/terracode.team" target="_blank" rel="noopener noreferrer"><Instagram/></a>
+                <a href="https://www.linkedin.com/company/terracodedev" target="_blank" rel="noopener noreferrer" aria-label="Visit Terracode on LinkedIn"><Linkedin/></a>
+                <a href="https://instagram.com/terracode.team" target="_blank" rel="noopener noreferrer" aria-label="Visit Terracode on Instagram"><Instagram/></a>
             </div> 
         </div>
         <div className=" flex flex-col items-center justify-between gap-4 px-4 py-4 bg-neutral-800 mx-4 mt-4">

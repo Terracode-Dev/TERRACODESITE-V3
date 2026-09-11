@@ -63,7 +63,7 @@ export default function Footer() {
                     </a>
                 </div>
                 <div className="flex flex-col space-y-3 self-stretch relative tracking-[0.04px] leading-6 font-semibold" >
-                    <a href="tel:+9477 582 4406">(+94) 77 582 4406</a>
+                    <a href="tel:+9470 190 8095">(+94) 70 190 8095</a>
                     <a href="tel:+9411 283 8640">(+94) 112 838 640</a>
                 </div>
             </div>
@@ -106,7 +106,13 @@ export default function Footer() {
     </div>
     <div className="hidden md:flex items-center justify-between gap-4 py-4 px-10 bg-neutral-800 mx-4 mt-4">
             <p className="m-0"> © {new Date().getFullYear()} Terracode Private Limited. All rights reserved.</p>
-            <Link to="/t&s" className="text-center underline hover:text-amber-500 ">Terms and Conditions</Link>
+            <div className="flex flex-row gap-16">
+                 <Link to="/t&s" search={{ policy: "terms-conditions" }} className="text-center underline hover:text-amber-500 ">Terms and Conditions</Link>
+                 <Link to="/t&s" search={{ policy: "privacy-policy" }} className="text-center underline hover:text-amber-500 ">Privacy Policy</Link>
+                 <Link to="/t&s" search={{ policy: "end-user-license-agreement-eula" }} className="text-center underline hover:text-amber-500 ">EULA Policy</Link>
+
+            </div>
+
     </div>
 
     {/* Mobile View */}
@@ -157,7 +163,7 @@ export default function Footer() {
                     </a>
                 </div>
                 <div className="flex flex-col space-y-2 font-semibold" >
-                    <a href="tel:+9477 582 4406">(+94) 77 582 4406</a>
+                    <a href="tel:+9470 19 08 095">(+94) 70 190 8095</a>
                     <a href="tel:+9411 283 8640">(+94) 112 838 640</a>
                 </div>
             </div>
@@ -170,7 +176,11 @@ export default function Footer() {
         </div>
         <div className=" flex flex-col items-center justify-between gap-4 px-4 py-4 bg-neutral-800 mx-4 mt-4">
             <p className="text-center"> © {new Date().getFullYear()} Terracode Private Limited. All rights reserved.</p>
-            <Link to="/t&s" className="text-center underline ">Terms and Conditions</Link>
+            <div className="flex flex-row gap-4">
+                <Link to="/t&s" search={{ policy: "terms-conditions" }} className="text-center underline ">Terms and Conditions</Link>
+                <Link to="/t&s" search={{ policy: "privacy-policy" }} className="text-center underline ">Privacy Policy</Link>
+                <Link to="/t&s" search={{ policy: "end-user-license-agreement-eula" }} className="text-center underline ">EULA Policy</Link>
+            </div>
         </div>
     </div>
     </div>

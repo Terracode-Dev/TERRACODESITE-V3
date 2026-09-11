@@ -57,7 +57,7 @@ export const articlesData: SidebarItem[] = [
       content: "We may update this Cookie Policy from time to time. Changes will be posted on this page with an updated “Last Updated” date."
     },
     { title: "7. Contact Us",
-      content: "If you have questions about cookies or this policy, contact us at [Insert Contact Email]."
+      content: "If you have questions about cookies or this policy, contact us at operations@terracodedev.com."
     },
   ]
 },
@@ -142,7 +142,7 @@ export const articlesData: SidebarItem[] = [
       { subDescription: "Terracode will provide relevant certifications or reports (e.g., ISO, SOC 2, if applicable)." },
     ]},
     { title: "12. Governing Law",
-      content: "This DPA shall be governed by the laws of [Insert Jurisdiction], unless otherwise agreed."
+      content: "This DPA shall be governed by the laws of Companies act no.7 of 2007, unless otherwise agreed."
     },
   ]
 },
@@ -179,7 +179,7 @@ export const articlesData: SidebarItem[] = [
       content: "Terracode reserves the right to modify, suspend, or discontinue Services at any time without prior notice. We are not liable for any impact resulting from such changes."
     },
     { title: "7. Jurisdiction",
-      content: "This Disclaimer is governed by the laws of [Insert Jurisdiction]. Any disputes shall be resolved under the exclusive jurisdiction of courts in [Insert Jurisdiction]."
+      content: "This Disclaimer is governed by the laws of Companies act no.7 of 2007. Any disputes shall be resolved under the exclusive jurisdiction of courts in Respective legal courts of Srilanka."
     },
   ]
 },
@@ -233,7 +233,7 @@ export const articlesData: SidebarItem[] = [
       content: "You may not use or export the Software in violation of applicable export control laws or regulations."
     },
     { title: "10. Governing Law",
-      content: "This Agreement is governed by the laws of [Insert Jurisdiction]. Any disputes shall be resolved in the courts of [Insert Jurisdiction]."
+      content: "This Agreement is governed by the laws of Companies act no.7 of 2007. Any disputes shall be resolved in the courts of Respective legal courts of Srilanka."
     },
   ]
 },
@@ -298,7 +298,7 @@ export const articlesData: SidebarItem[] = [
       content: "We may update this Privacy Policy periodically. Changes will be posted on our website with a new “Last Updated” date."
     },
     { title: "10. Contact Us",
-      content: "For questions, email us at [Insert Legal Contact Email]."
+      content: "For questions, email us at operations@terracodedev.com."
     },
   ]
 },
@@ -328,7 +328,7 @@ export const articlesData: SidebarItem[] = [
       ]
     },
     { title: "4. Requesting a Refund",
-      content: "To request a refund, contact us at [Insert Billing Email] with transaction details. Refund requests are typically processed within 7–14 business days."
+      content: "To request a refund, contact us at operations@terracodedev.com with transaction details. Refund requests are typically processed within 7–14 business days."
     },
     { title: "5. Non-Refundable Items", subsections: [
       { subDescription: "Setup fees, onboarding costs, or third-party service fees are non-refundable." },
@@ -421,7 +421,7 @@ sections: [
   content: "Terracode reserves the right to suspend or terminate your account or Services for breach of these Terms."
 },
 { title: "9. Governing Law & Dispute Resolution",
-  content: "These Terms are governed by the laws of [Insert Jurisdiction]. Disputes shall be resolved through arbitration or courts in [Insert Jurisdiction]."
+  content: "These Terms are governed by the laws of Companies act no.7 of 2007. Disputes shall be resolved through arbitration or courts in Respective legal courts of Srilanka."
 },
 ]}
 ];

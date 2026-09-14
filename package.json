@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/generate-policy-pages.mjs",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "node scripts/generate-policy-pages.mjs && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },

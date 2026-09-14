@@ -107,9 +107,9 @@ export default function Footer() {
     <div className="hidden md:flex items-center justify-between gap-4 py-4 px-10 bg-neutral-800 mx-4 mt-4">
             <p className="m-0"> © {new Date().getFullYear()} Terracode Private Limited. All rights reserved.</p>
             <div className="flex flex-row gap-16">
-                 <Link to="/t&s" search={{ policy: "terms-conditions" }} className="text-center underline hover:text-amber-500 ">Terms and Conditions</Link>
-                 <Link to="/t&s" search={{ policy: "privacy-policy" }} className="text-center underline hover:text-amber-500 ">Privacy Policy</Link>
-                 <Link to="/t&s" search={{ policy: "end-user-license-agreement-eula" }} className="text-center underline hover:text-amber-500 ">EULA Policy</Link>
+                 <a href="/policies/terms-conditions.html" className="text-center underline hover:text-amber-500 ">Terms and Conditions</a>
+                 <a href="/policies/privacy-policy.html" className="text-center underline hover:text-amber-500 ">Privacy Policy</a>
+                 <a href="/policies/end-user-license-agreement-eula.html" className="text-center underline hover:text-amber-500 ">EULA Policy</a>
 
             </div>
 
@@ -177,9 +177,9 @@ export default function Footer() {
         <div className=" flex flex-col items-center justify-between gap-4 px-4 py-4 bg-neutral-800 mx-4 mt-4">
             <p className="text-center"> © {new Date().getFullYear()} Terracode Private Limited. All rights reserved.</p>
             <div className="flex flex-row gap-4">
-                <Link to="/t&s" search={{ policy: "terms-conditions" }} className="text-center underline ">Terms and Conditions</Link>
-                <Link to="/t&s" search={{ policy: "privacy-policy" }} className="text-center underline ">Privacy Policy</Link>
-                <Link to="/t&s" search={{ policy: "end-user-license-agreement-eula" }} className="text-center underline ">EULA Policy</Link>
+                <a href="/policies/terms-conditions.html" className="text-center underline ">Terms and Conditions</a>
+                <a href="/policies/privacy-policy.html" className="text-center underline ">Privacy Policy</a>
+                <a href="/policies/end-user-license-agreement-eula.html" className="text-center underline ">EULA Policy</a>
             </div>
         </div>
     </div>

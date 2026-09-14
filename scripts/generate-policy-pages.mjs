@@ -12,6 +12,9 @@ await mkdir(directory, { recursive: true })
 const h = React.createElement
 const slug = (title) => title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')
 const url = (article) => `/policies/${slug(article.title)}.html`
+const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
+  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+})[character])
 
 function PolicyPage({ article }) {
   return h(React.Fragment, null,
@@ -37,6 +40,9 @@ const css = `*{box-sizing:border-box}body{margin:0;background:#000;color:#fff;fo
 
 for (const article of articlesData) {
   const filename = `${slug(article.title)}.html`
-  const html = `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${article.title} | Terracode</title><link rel="canonical" href="https://www.terracodedev.com${url(article)}"><style>${css}</style></head><body>${renderToStaticMarkup(h(PolicyPage, { article }))}</body></html>`
+  const title = escapeHtml(`${article.title} | Terracode`)
+  const description = escapeHtml(article.description)
+  const canonical = `https://www.terracodedev.com${url(article)}`
+  const html = `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title}</title><meta name="description" content="${description}"><meta name="robots" content="index, follow"><link rel="canonical" href="${canonical}"><meta property="og:type" content="website"><meta property="og:title" content="${title}"><meta property="og:description" content="${description}"><meta property="og:url" content="${canonical}"><style>${css}</style></head><body>${renderToStaticMarkup(h(PolicyPage, { article }))}</body></html>`
   await writeFile(join(directory, filename), html)
 }

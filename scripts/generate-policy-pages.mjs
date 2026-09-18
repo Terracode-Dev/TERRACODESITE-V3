@@ -46,8 +46,21 @@ const css = `*{box-sizing:border-box}body{margin:0;background:#000;color:#fff;fo
 for (const article of articlesData) {
   const filename = `${slug(article.title)}.html`
   const title = escapeHtml(`${article.title} | Terracode`)
-  const description = escapeHtml(article.description)
+  const isPrivacyPolicy = slug(article.title) === 'privacy-policy'
+  const description = escapeHtml(isPrivacyPolicy
+    ? 'Learn how Terracode collects, uses, stores and protects personal data, your privacy rights, and how to contact us about data protection.'
+    : article.description)
+  const socialMeta = isPrivacyPolicy ? [
+    '<meta property="og:site_name" content="Terracode">',
+    '<meta property="og:image" content="https://www.terracodedev.com/logo.png">',
+    '<meta property="og:image:alt" content="Terracode logo">',
+    '<meta name="twitter:card" content="summary">',
+    `<meta name="twitter:title" content="${title}">`,
+    `<meta name="twitter:description" content="${description}">`,
+    '<meta name="twitter:image" content="https://www.terracodedev.com/logo.png">',
+    '<meta name="twitter:image:alt" content="Terracode logo">',
+  ].join('') : ''
   const canonical = `https://www.terracodedev.com${url(article)}`
   const html = `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title}</title><meta name="description" content="${description}"><meta name="robots" content="index, follow">${policyMeta}<link rel="canonical" href="${canonical}"><meta property="og:type" content="website"><meta property="og:title" content="${title}"><meta property="og:description" content="${description}"><meta property="og:url" content="${canonical}"><style>${css}</style></head><body>${renderToStaticMarkup(h(PolicyPage, { article }))}</body></html>`
-  await writeFile(join(directory, filename), html)
+  await writeFile(join(directory, filename), html.replace('<style>', `${socialMeta}<style>`))
 }

@@ -109,7 +109,7 @@ export default function Footer() {
             <div className="flex flex-row gap-16">
                  <a href="/policies/terms-conditions.html" className="text-center underline hover:text-amber-500 ">Terms and Conditions</a>
                  <a href="/policies/privacy-policy.html" className="text-center underline hover:text-amber-500 ">Privacy Policy</a>
-                 <a href="/policies/end-user-license-agreement-eula.html" className="text-center underline hover:text-amber-500 ">EULA Policy</a>
+                 <a href="/policies/refund-policy.html" className="text-center underline hover:text-amber-500 ">Refund Policy</a>
 
             </div>
 
@@ -179,7 +179,7 @@ export default function Footer() {
             <div className="flex flex-row gap-4">
                 <a href="/policies/terms-conditions.html" className="text-center underline ">Terms and Conditions</a>
                 <a href="/policies/privacy-policy.html" className="text-center underline ">Privacy Policy</a>
-                <a href="/policies/end-user-license-agreement-eula.html" className="text-center underline ">EULA Policy</a>
+                <a href="/policies/refund-policy.html" className="text-center underline ">Refund Policy</a>
             </div>
         </div>
     </div>

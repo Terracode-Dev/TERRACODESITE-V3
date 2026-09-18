@@ -409,7 +409,10 @@ const Payform = () => {
                 )}
               </div>
               <label htmlFor="agreeToTerms" className="text-gray-300 text-lg ml-2 cursor-pointer">
-                I agree with Terms and Privacy Policy
+                  I agree with{' '}
+                  <a href="/policies/terms-conditions.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Terms &amp; Conditions</a>
+                  {' '}and{' '}
+                  <a href="/policies/privacy-policy.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Privacy Policy</a>
               </label>
             </div>
 
@@ -425,6 +428,11 @@ const Payform = () => {
               </svg>
             </button>
           </div>
+            <nav aria-label="Payment policies" className="mt-4 flex flex-wrap gap-4 text-sm text-gray-300">
+              <a href="/policies/terms-conditions.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Terms &amp; Conditions</a>
+              <a href="/policies/privacy-policy.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Privacy Policy</a>
+              <a href="/policies/refund-policy.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Refund Policy</a>
+            </nav>
         </form>
       </div>
     </div>

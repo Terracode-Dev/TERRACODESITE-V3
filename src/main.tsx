@@ -28,15 +28,14 @@ router.subscribe("onResolved", () => {
 
 // Render the app
 const rootElement = document.getElementById('root')!
-if (!rootElement.innerHTML) {
-  const root = ReactDOM.createRoot(rootElement)
-  root.render(
-    <StrictMode>
-      <HelmetProvider>
-        <ToastProvider>
-          <RouterProvider router={router} />
-        </ToastProvider>
-      </HelmetProvider>
-    </StrictMode>
-  )
-}
+// Replace the static policy navigation with the application when JavaScript runs.
+const root = ReactDOM.createRoot(rootElement)
+root.render(
+  <StrictMode>
+    <HelmetProvider>
+      <ToastProvider>
+        <RouterProvider router={router} />
+      </ToastProvider>
+    </HelmetProvider>
+  </StrictMode>
+)

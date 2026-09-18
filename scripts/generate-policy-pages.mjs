@@ -11,12 +11,16 @@ const directory = join('public', 'policies')
 await mkdir(directory, { recursive: true })
 const h = React.createElement
 const slug = (title) => title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')
-const url = (article) => `/policies/${slug(article.title)}.html`
+const { rewrites } = JSON.parse(await readFile('vercel.json', 'utf8'))
+const url = (article) => {
+  const file = `/policies/${slug(article.title)}.html`
+  return rewrites.find((rule) => rule.destination === file)?.source ?? file
+}
 const policyMeta = [
-  ['privacy-policy', 'privacy-policy.html'],
-  ['terms-of-service', 'terms-conditions.html'],
-  ['refund-policy', 'refund-policy.html'],
-].map(([name, file]) => `<meta name="${name}" content="https://www.terracodedev.com/policies/${file}">`).join('')
+  ['privacy-policy', '/privacy-policy'],
+  ['terms-of-service', '/terms-and-conditions'],
+  ['refund-policy', '/refund-policy'],
+].map(([name, path]) => `<meta name="${name}" content="https://www.terracodedev.com${path}">`).join('')
 const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
 })[character])
@@ -45,7 +49,7 @@ const css = `*{box-sizing:border-box}body{margin:0;background:#000;color:#fff;fo
 
 for (const article of articlesData) {
   const filename = `${slug(article.title)}.html`
-  const title = escapeHtml(`${article.title} | Terracode`)
+  const title = escapeHtml(`${article.title === 'Terms & Conditions' ? 'Terms and Conditions' : article.title} | Terracode`)
   const isPrivacyPolicy = slug(article.title) === 'privacy-policy'
   const description = escapeHtml(isPrivacyPolicy
     ? 'Learn how Terracode collects, uses, stores and protects personal data, your privacy rights, and how to contact us about data protection.'

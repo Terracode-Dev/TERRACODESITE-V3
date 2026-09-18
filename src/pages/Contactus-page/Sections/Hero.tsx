@@ -164,9 +164,9 @@ const Hero = () => {
                   </div>
                 <label htmlFor="agreeToTerms" className="text-gray-300 text-xl mx-2">
                   I agree with{' '}
-                  <a href="/policies/terms-conditions.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Terms &amp; Conditions</a>
+                  <a href="/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Terms &amp; Conditions</a>
                   {' '}and{' '}
-                  <a href="/policies/privacy-policy.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Privacy Policy</a>
+                  <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Privacy Policy</a>
                 </label>
                 </div>
                 {/* Submit Button */}

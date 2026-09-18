@@ -410,9 +410,9 @@ const Payform = () => {
               </div>
               <label htmlFor="agreeToTerms" className="text-gray-300 text-lg ml-2 cursor-pointer">
                   I agree with{' '}
-                  <a href="/policies/terms-conditions.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Terms &amp; Conditions</a>
+                  <a href="/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Terms &amp; Conditions</a>
                   {' '}and{' '}
-                  <a href="/policies/privacy-policy.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Privacy Policy</a>
+                  <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Privacy Policy</a>
               </label>
             </div>
 
@@ -428,11 +428,12 @@ const Payform = () => {
               </svg>
             </button>
           </div>
-            <nav aria-label="Payment policies" className="mt-4 flex flex-wrap gap-4 text-sm text-gray-300">
-              <a href="/policies/terms-conditions.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Terms &amp; Conditions</a>
-              <a href="/policies/privacy-policy.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Privacy Policy</a>
-              <a href="/policies/refund-policy.html" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Refund Policy</a>
-            </nav>
+          <p className="mt-4 text-sm text-gray-300">
+            By proceeding with this payment, you acknowledge and agree to our{' '}
+            <a href="/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Terms &amp; Conditions</a>,{' '}
+            <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Privacy Policy</a>, and{' '}
+            <a href="/refund-policy" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-500">Refund Policy</a>.
+          </p>
         </form>
       </div>
     </div>

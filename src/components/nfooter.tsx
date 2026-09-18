@@ -107,9 +107,9 @@ export default function Footer() {
     <div className="hidden md:flex items-center justify-between gap-4 py-4 px-10 bg-neutral-800 mx-4 mt-4">
             <p className="m-0"> © {new Date().getFullYear()} Terracode Private Limited. All rights reserved.</p>
             <div className="flex flex-row gap-16">
-                 <a href="/policies/terms-conditions.html" className="text-center underline hover:text-amber-500 ">Terms and Conditions</a>
-                 <a href="/policies/privacy-policy.html" className="text-center underline hover:text-amber-500 ">Privacy Policy</a>
-                 <a href="/policies/refund-policy.html" className="text-center underline hover:text-amber-500 ">Refund Policy</a>
+                 <a href="/terms-and-conditions" className="text-center underline hover:text-amber-500 ">Terms and Conditions</a>
+                 <a href="/privacy-policy" className="text-center underline hover:text-amber-500 ">Privacy Policy</a>
+                 <a href="/refund-policy" className="text-center underline hover:text-amber-500 ">Refund Policy</a>
 
             </div>
 
@@ -177,9 +177,9 @@ export default function Footer() {
         <div className=" flex flex-col items-center justify-between gap-4 px-4 py-4 bg-neutral-800 mx-4 mt-4">
             <p className="text-center"> © {new Date().getFullYear()} Terracode Private Limited. All rights reserved.</p>
             <div className="flex flex-row gap-4">
-                <a href="/policies/terms-conditions.html" className="text-center underline ">Terms and Conditions</a>
-                <a href="/policies/privacy-policy.html" className="text-center underline ">Privacy Policy</a>
-                <a href="/policies/refund-policy.html" className="text-center underline ">Refund Policy</a>
+                <a href="/terms-and-conditions" className="text-center underline ">Terms and Conditions</a>
+                <a href="/privacy-policy" className="text-center underline ">Privacy Policy</a>
+                <a href="/refund-policy" className="text-center underline ">Refund Policy</a>
             </div>
         </div>
     </div>

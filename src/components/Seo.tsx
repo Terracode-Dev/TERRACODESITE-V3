@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import { articlesData } from '@/pages/Article-page/NewArticle'
+import business from '@/data/business.json'
 
 const SITE_URL = 'https://www.terracodedev.com'
 const DEFAULT_IMAGE = `${SITE_URL}/logo.png`
@@ -15,16 +16,17 @@ const pages: Record<string, SeoEntry> = {
   '/career': { title: 'Software and Design Careers in Sri Lanka | Terracode', description: 'Explore career opportunities at Terracode and help build useful software, intelligent systems and digital products with a collaborative team.' },
   '/cloud-solutions': { title: 'Cloud Solutions and DevOps Services | Terracode', description: 'Modernize infrastructure with cloud migration, DevOps automation, monitoring and scalable AWS, Azure and Google Cloud solutions.' },
   '/contact': { title: 'Contact Terracode | Start Your Software Project', description: 'Contact Terracode to discuss your website, mobile app, AI, cloud or custom business software project.' },
+  '/payments': { title: 'Payments | Terracode', description: 'Review Terracode payment details, currencies, and links to our terms, privacy and refund policies before continuing to payment.' },
   '/digitalportfolio': { title: 'Software and Digital Product Portfolio | Terracode', description: 'Explore websites, mobile applications and custom software products designed and developed by Terracode.' },
   '/mobile-apps': { title: 'Mobile App Development Company | Terracode', description: 'Launch secure, scalable iOS and Android applications with Terracode’s end-to-end mobile app design and development team.' },
   '/partnerships': { title: 'Technology Partnerships | Terracode', description: 'Partner with Terracode to deliver software, design, AI and cloud capabilities for your clients and business initiatives.' },
   '/pricing': { title: 'Software Development Pricing | Terracode', description: 'Review transparent Terracode pricing packages for websites, applications and custom digital solutions.' },
-  '/t&s': { title: 'Terms and Conditions | Terracode', description: 'Read the terms, conditions and policies governing Terracode services and website use.' },
+  '/t&s': { title: 'Policies | Terracode', description: 'Read the terms, conditions and policies governing Terracode services and website use.' },
   '/ux-design': { title: 'UX Design and User Research Services | Terracode', description: 'Create intuitive, accessible digital products with research-led UX design, prototyping and usability testing from Terracode.' },
   '/website-solutions': { title: 'Website Design and Development Company | Terracode', description: 'Grow your business with a fast, responsive and SEO-ready website designed and developed by Terracode.' },
 }
 
-const noIndexPaths = new Set(['/cancel-page', '/company-portfolio', '/dGVycmFjb2RlCg', '/home', '/payments', '/payments-details', '/service', '/success-page', '/test'])
+const noIndexPaths = new Set(['/cancel-page', '/company-portfolio', '/dGVycmFjb2RlCg', '/home', '/payments-details', '/service', '/success-page', '/test'])
 const serviceNames: Record<string, string> = {
   '/ai-solutions': 'Artificial Intelligence Solutions',
   '/business-softwares': 'Custom Business Software Development',
@@ -36,6 +38,8 @@ const serviceNames: Record<string, string> = {
 
 export function Seo({ pathname }: { pathname: string }) {
   const path = pathname !== '/' ? pathname.replace(/\/$/, '') : '/'
+  // The legacy switcher owns its selected-policy metadata in its lazy route.
+  if (path === '/t&s') return null
   const slug = path.startsWith('/articles/') ? decodeURIComponent(path.slice(10)) : undefined
   const article = slug ? articlesData.find((item) => item.slug === slug) : undefined
   const entry: SeoEntry | undefined = article
@@ -44,7 +48,7 @@ export function Seo({ pathname }: { pathname: string }) {
   const noIndex = noIndexPaths.has(path) || !entry
   const title = entry?.title ?? 'Page Not Found | Terracode'
   const description = entry?.description ?? 'The requested Terracode page could not be found.'
-  const canonical = `${SITE_URL}${path === '/' ? '/' : path}`
+  const canonical = `${SITE_URL}${path}`
   const image = article?.image ? `${SITE_URL}${article.image.startsWith('/') ? article.image : `/${article.image}`}` : DEFAULT_IMAGE
   const schema = article ? {
     '@context': 'https://schema.org', '@type': 'BlogPosting', headline: article.title,
@@ -56,10 +60,17 @@ export function Seo({ pathname }: { pathname: string }) {
     description, url: canonical,
     provider: { '@type': 'Organization', name: 'Terracode', url: SITE_URL },
     areaServed: 'Worldwide',
-  } : path === '/' ? {
-    '@context': 'https://schema.org', '@type': 'Organization', name: 'Terracode', url: SITE_URL,
-    logo: DEFAULT_IMAGE, email: 'hello@terracodedev.com', telephone: '+94 77 582 4406',
-    sameAs: ['https://www.facebook.com/terracodedev', 'https://www.instagram.com/terracode.team', 'https://www.linkedin.com/company/terracodedev'],
+  } : path === '/' || path === '/contact' || path === '/payments' ? {
+    '@context': 'https://schema.org', '@graph': [{
+      '@type': 'Organization', '@id': `${SITE_URL}/#organization`, name: business.name, url: SITE_URL,
+      logo: DEFAULT_IMAGE, email: business.email, telephone: business.telephone,
+      address: { '@type': 'PostalAddress', streetAddress: business.streetAddress,
+        addressLocality: business.addressLocality, addressCountry: business.addressCountry },
+      contactPoint: { '@type': 'ContactPoint', contactType: 'customer support',
+        email: business.email, telephone: business.telephone },
+      sameAs: ['https://www.facebook.com/terracodedev', 'https://www.instagram.com/terracode.team', 'https://www.linkedin.com/company/terracodedev'],
+    }, { '@type': 'WebSite', '@id': `${SITE_URL}/#website`, name: 'Terracode', url: SITE_URL,
+      publisher: { '@id': `${SITE_URL}/#organization` } }],
   } : undefined
 
   return <Helmet>

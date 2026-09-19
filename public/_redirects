@@ -1,0 +1,7 @@
+# Legacy policy URLs: one canonical document per policy.
+/policies/privacy-policy.html /privacy-policy 301
+/policies/privacy-policy /privacy-policy 301
+/policies/terms-conditions.html /terms-and-conditions 301
+/policies/terms-conditions /terms-and-conditions 301
+/policies/refund-policy.html /refund-policy 301
+/policies/refund-policy /refund-policy 301

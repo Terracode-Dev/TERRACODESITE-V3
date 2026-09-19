@@ -1,21 +1,25 @@
 import { useState, useEffect } from 'react';
-import { Link } from '@tanstack/react-router';
+import { initGA, trackPageView } from '@/lib/analytics';
 
 export function CookieBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent');
-    if (!consent) setVisible(true);
+    try {
+      const consent = localStorage.getItem('cookie-consent');
+      if (!consent) setVisible(true);
+    } catch { setVisible(true); }
   }, []);
 
   const accept = () => {
-    localStorage.setItem('cookie-consent', 'accepted');
+    try { localStorage.setItem('cookie-consent', 'accepted'); } catch { /* Keep analytics disabled when consent cannot be saved. */ }
+    initGA();
+    trackPageView(window.location.pathname + window.location.search);
     setVisible(false);
   };
 
   const decline = () => {
-    localStorage.setItem('cookie-consent', 'declined');
+    try { localStorage.setItem('cookie-consent', 'declined'); } catch { /* Analytics remains disabled. */ }
     setVisible(false);
   };
 
@@ -26,9 +30,9 @@ export function CookieBanner() {
       <div className=" flex flex-col md:flex-row items-center justify-between gap-4 container mx-auto px-4">
         <p className="text-sm md:text-base">
           We use cookies to improve your experience. By clicking Accept you agree to our use of cookies.{' '}
-          <Link to="/" className="underline text-nowrap text-sm hover:text-orange-400">
+          <a href="/policies/cookie-policy" className="underline text-nowrap text-sm hover:text-orange-400">
             Learn more
-          </Link>
+          </a>
         </p>
         <div className="flex gap-2">
           <button

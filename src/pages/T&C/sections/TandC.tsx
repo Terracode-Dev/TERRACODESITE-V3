@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { articlesData } from "./data";
 import type{ SidebarItem } from "./data";
 import { useNavigate, useSearch } from '@tanstack/react-router';
+import policyRoutes from '@/data/policy-routes.json';
+import { Helmet } from 'react-helmet-async';
 
 const createSlug = (title: string) => {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
@@ -19,7 +21,7 @@ export default function TandC() {
   // State to track current article
   const [currentArticle, setCurrentArticle] = useState(initialArticle);
   // State to manage sidebar articles
-  const [sidebarArticles, setSidebarArticles] = useState<SidebarItem[]>([]);
+  const [sidebarArticles, setSidebarArticles] = useState<SidebarItem[]>(articlesData.filter(article => article.id !== initialArticle.id));
   
   // Initialize and update sidebar articles when currentArticle changes
   useEffect(() => {
@@ -61,9 +63,21 @@ export default function TandC() {
 
   // Check if there are more articles to display
   const hasMoreArticles = sidebarArticles.length > 0;
+  const policyUrl = `https://www.terracodedev.com${policyRoutes[createSlug(currentArticle.title) as keyof typeof policyRoutes]}`;
+  const pageTitle = `${currentArticle.title === 'Terms & Conditions' ? 'Terms and Conditions' : currentArticle.title} | Terracode`;
 
     return (
     <div className="bg-black text-white font-lufga xl:my-10 mb-20">
+      <Helmet>
+        <title>{pageTitle}</title>
+        <meta name="description" content={currentArticle.description} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={policyUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={currentArticle.description} />
+        <meta property="og:url" content={policyUrl} />
+      </Helmet>
       {/* Main Container */}
       <div className="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 px-6 py-12">
         
@@ -113,13 +127,19 @@ export default function TandC() {
                 <p className="text-[#A4A4A4] text-xl mb-3">{item.description}</p>
                 <div className="flex flex-row gap-4 items-center justify-between mt-4">
                   {/* Read More Arrow with Click Handler */}
-                  <div 
+                  <a
+                    href={policyRoutes[createSlug(item.title) as keyof typeof policyRoutes]}
                     className= "flex hover:bg-white transition-colors rounded-full cursor-pointer"
-                    onClick={() => handleReadMore(item.id)}
+                    onClick={(event) => {
+                      if (event.button === 0 && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
+                        event.preventDefault();
+                        handleReadMore(item.id);
+                      }
+                    }}
                   >
                     {/* <h1 className="text-[#FDA10A] px-4 py-2 rounded-full text-xl">Read More</h1> */}
                     <img src="/Property 23.png" alt="Read More" />
-                  </div>
+                  </a>
                 </div>
               </div>
             ))

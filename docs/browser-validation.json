@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-09-19T15:42:54.088Z",
+  "origin": "http://127.0.0.1:4174",
+  "results": [
+    "PASS no-JavaScript visible content: /",
+    "PASS no-JavaScript visible content: /contact",
+    "PASS no-JavaScript visible content: /payments",
+    "PASS no-JavaScript visible content: /t&s",
+    "PASS no-JavaScript visible content: /privacy-policy",
+    "PASS no-JavaScript visible content: /terms-and-conditions",
+    "PASS no-JavaScript visible content: /refund-policy",
+    "PASS contact form rendered; analytics absent before consent and after decline",
+    "PASS payment query state preserved; analytics initializes once after acceptance",
+    "PASS legacy policy query navigation preserved",
+    "PASS mobile policy fits viewport"
+  ],
+  "exceptions": []
+}

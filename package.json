@@ -6,7 +6,9 @@
   "scripts": {
     "predev": "node scripts/generate-policy-pages.mjs",
     "dev": "vite",
-    "build": "node scripts/generate-policy-pages.mjs && tsc -b && vite build",
+    "build": "node scripts/generate-policy-pages.mjs && tsc -b && vite build && node scripts/prerender-public-pages.mjs",
+    "check:policies": "node scripts/check-policy-pages.mjs",
+    "audit:public": "node scripts/audit-public-pages.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },

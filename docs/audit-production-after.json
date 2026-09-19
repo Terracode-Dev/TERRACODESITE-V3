@@ -1,0 +1,1816 @@
+{
+  "timestamp": "2026-09-19T15:32:53.711Z",
+  "origin": "https://www.terracodedev.com",
+  "robots": {
+    "initial": 200,
+    "final": 200,
+    "redirects": 0,
+    "finalUrl": "https://www.terracodedev.com/robots.txt",
+    "contentType": "text/plain; charset=utf-8",
+    "statuses": [
+      200
+    ],
+    "challenge": false,
+    "noindex": false,
+    "canonicalMatchesFinal": false,
+    "description": false,
+    "og": false,
+    "robotsMeta": false,
+    "text": false,
+    "company": true,
+    "email": false,
+    "phone": false,
+    "address": false,
+    "schema": false,
+    "server": "cloudflare",
+    "body": "# robots.txt for terracodedev.com\n# Terracode - Crafting Intelligent Digital Futures\n# Last updated: September 2026\n\n# Default rules for all crawlers\nUser-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /api/\nDisallow: /private/\nDisallow: /*.json$\nDisallow: /tmp/\n\n# Google AI/Gemini\nUser-agent: Google-Extended\nAllow: /\n\n# OpenAI GPTBot\nUser-agent: GPTBot\nAllow: /\n\n# ChatGPT User Agent\nUser-agent: ChatGPT-User\nAllow: /\n\n# Anthropic Claude\nUser-agent: anthropic-ai\nAllow: /\n\nUser-agent: Claude-Web\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\n# Perplexity AI\nUser-agent: PerplexityBot\nAllow: /\n\n# Cohere AI\nUser-agent: cohere-ai\nAllow: /\n\n# Meta AI\nUser-agent: Meta-ExternalAgent\nAllow: /\n\nUser-agent: FacebookBot\nAllow: /\n\n# Apple AI/Siri\nUser-agent: Applebot\nAllow: /\n\nUser-agent: Applebot-Extended\nAllow: /\n\n# Microsoft Copilot\nUser-agent: Copilot\nAllow: /\n\n# Common Crawl (used for AI training)\nUser-agent: CCBot\nAllow: /\n\n# Amazon Alexa\nUser-agent: Amazonbot\nAllow: /\n\n# You.com AI\nUser-agent: YouBot\nAllow: /\n\n# Sitemap location\nSitemap: https://www.terracodedev.com/sitemap.xml\n\n# AI/LLM specific files\n# llms.txt: https://www.terracodedev.com/llms.txt\n# ai.txt: https://www.terracodedev.com/ai.txt\n"
+  },
+  "sitemap": {
+    "initial": 200,
+    "final": 200,
+    "redirects": 0,
+    "finalUrl": "https://www.terracodedev.com/sitemap.xml",
+    "contentType": "application/xml",
+    "statuses": [
+      200
+    ],
+    "challenge": false,
+    "noindex": false,
+    "canonicalMatchesFinal": false,
+    "description": false,
+    "og": false,
+    "robotsMeta": false,
+    "text": false,
+    "company": false,
+    "email": false,
+    "phone": false,
+    "address": false,
+    "schema": false,
+    "server": "cloudflare",
+    "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n  \n  <!-- Homepage -->\n  <url>\n    <loc>https://www.terracodedev.com/</loc>\n    <lastmod>2025-01-18</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>\n  \n  <!-- Service Pages -->\n  <url>\n    <loc>https://www.terracodedev.com/ux-design</loc>\n    <lastmod>2025-01-18</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.9</priority>\n  </url>\n  \n  <url>\n    <loc>https://www.terracodedev.com/business-softwares</loc>\n    <lastmod>2025-01-18</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.9</priority>\n  </url>\n  \n  <url>\n    <loc>https://www.terracodedev.com/website-solutions</loc>\n    <lastmod>2025-01-18</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.9</priority>\n  </url>\n  \n  <url>\n    <loc>https://www.terracodedev.com/mobile-apps</loc>\n    <lastmod>2025-01-18</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.9</priority>\n  </url>\n  \n  <url>\n    <loc>https://www.terracodedev.com/ai-solutions</loc>\n    <lastmod>2025-01-18</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.9</priority>\n  </url>\n  \n  <url>\n    <loc>https://www.terracodedev.com/cloud-solutions</loc>\n    <lastmod>2025-01-18</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.9</priority>\n  </url>\n  \n  <!-- Company Pages -->\n  <url>\n    <loc>https://www.terracodedev.com/about</loc>\n    <lastmod>2025-01-18</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  \n  <url>\n    <loc>https://www.terracodedev.com/contact</loc>\n    <lastmod>2025-01-18</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  \n  <url>\n    <loc>https://www.terracodedev.com/partnerships</loc>\n    <lastmod>2025-01-18</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n  \n  <!-- Portfolio & Content -->\n  <url>\n    <loc>https://www.terracodedev.com/digitalportfolio</loc>\n    <lastmod>2025-01-18</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n  \n  <url>\n    <loc>https://www.terracodedev.com/articles</loc>\n    <lastmod>2026-08-24</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n\n  <url>\n    <loc>https://www.terracodedev.com/articles/our-story</loc>\n    <lastmod>2025-08-02</lastmod>\n  </url>\n\n  <url>\n    <loc>https://www.terracodedev.com/articles/merkor</loc>\n    <lastmod>2026-08-21</lastmod>\n  </url>\n\n  <url>\n    <loc>https://www.terracodedev.com/articles/foreststore</loc>\n    <lastmod>2026-08-24</lastmod>\n  </url>\n\n  <url>\n    <loc>https://www.terracodedev.com/career</loc>\n  </url>\n\n  <url>\n    <loc>https://www.terracodedev.com/pricing</loc>\n  </url>\n\n  <url>\n    <loc>https://www.terracodedev.com/t&amp;s</loc>\n  </url>\n\n  <url><loc>https://www.terracodedev.com/terms-and-conditions</loc></url>\n  <url><loc>https://www.terracodedev.com/privacy-policy</loc></url>\n  <url><loc>https://www.terracodedev.com/refund-policy</loc></url>\n  <url><loc>https://www.terracodedev.com/policies/cookie-policy.html</loc></url>\n  <url><loc>https://www.terracodedev.com/policies/data-processing-agreement-dpa.html</loc></url>\n  <url><loc>https://www.terracodedev.com/policies/disclaimer-policy.html</loc></url>\n  <url><loc>https://www.terracodedev.com/policies/end-user-license-agreement-eula.html</loc></url>\n  <url><loc>https://www.terracodedev.com/policies/service-level-agreement-sla.html</loc></url>\n\n</urlset>\n"
+  },
+  "rows": [
+    {
+      "path": "/",
+      "allowed": true,
+      "inSitemap": true,
+      "tests": {
+        "browser": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "googlebot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "bot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "curl": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        }
+      }
+    },
+    {
+      "path": "/contact",
+      "allowed": true,
+      "inSitemap": true,
+      "tests": {
+        "browser": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/contact",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "googlebot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/contact",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "bot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/contact",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "curl": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/contact",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        }
+      }
+    },
+    {
+      "path": "/payments",
+      "allowed": true,
+      "inSitemap": false,
+      "tests": {
+        "browser": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/payments",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "googlebot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/payments",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "bot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/payments",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "curl": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/payments",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        }
+      }
+    },
+    {
+      "path": "/t&s",
+      "allowed": true,
+      "inSitemap": true,
+      "tests": {
+        "browser": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/t&s",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "googlebot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/t&s",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "bot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/t&s",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "curl": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/t&s",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "TERRACODE - Crafting Intelligent Digital Futures",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": false,
+          "text": false,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        }
+      }
+    },
+    {
+      "path": "/policies/cookie-policy",
+      "allowed": true,
+      "inSitemap": false,
+      "tests": {
+        "browser": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/cookie-policy",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Cookie Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/cookie-policy.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "googlebot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/cookie-policy",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Cookie Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/cookie-policy.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "bot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/cookie-policy",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Cookie Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/cookie-policy.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "curl": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/cookie-policy",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Cookie Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/cookie-policy.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        }
+      }
+    },
+    {
+      "path": "/policies/data-processing-agreement-dpa",
+      "allowed": true,
+      "inSitemap": false,
+      "tests": {
+        "browser": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/data-processing-agreement-dpa",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Data Processing Agreement (DPA) | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/data-processing-agreement-dpa.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "googlebot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/data-processing-agreement-dpa",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Data Processing Agreement (DPA) | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/data-processing-agreement-dpa.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "bot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/data-processing-agreement-dpa",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Data Processing Agreement (DPA) | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/data-processing-agreement-dpa.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "curl": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/data-processing-agreement-dpa",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Data Processing Agreement (DPA) | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/data-processing-agreement-dpa.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        }
+      }
+    },
+    {
+      "path": "/policies/disclaimer-policy",
+      "allowed": true,
+      "inSitemap": false,
+      "tests": {
+        "browser": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/disclaimer-policy",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Disclaimer Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/disclaimer-policy.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "googlebot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/disclaimer-policy",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Disclaimer Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/disclaimer-policy.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "bot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/disclaimer-policy",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Disclaimer Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/disclaimer-policy.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "curl": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/disclaimer-policy",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Disclaimer Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/disclaimer-policy.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        }
+      }
+    },
+    {
+      "path": "/policies/end-user-license-agreement-eula",
+      "allowed": true,
+      "inSitemap": false,
+      "tests": {
+        "browser": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/end-user-license-agreement-eula",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "End-User License Agreement (EULA) | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/end-user-license-agreement-eula.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "googlebot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/end-user-license-agreement-eula",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "End-User License Agreement (EULA) | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/end-user-license-agreement-eula.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "bot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/end-user-license-agreement-eula",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "End-User License Agreement (EULA) | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/end-user-license-agreement-eula.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "curl": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/end-user-license-agreement-eula",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "End-User License Agreement (EULA) | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/end-user-license-agreement-eula.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        }
+      }
+    },
+    {
+      "path": "/privacy-policy",
+      "allowed": true,
+      "inSitemap": true,
+      "tests": {
+        "browser": {
+          "initial": 308,
+          "final": 200,
+          "redirects": 1,
+          "finalUrl": "https://www.terracodedev.com/privacy-policy/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            308,
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Privacy Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/privacy-policy",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": true,
+          "address": true,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 308
+        },
+        "googlebot": {
+          "initial": 308,
+          "final": 200,
+          "redirects": 1,
+          "finalUrl": "https://www.terracodedev.com/privacy-policy/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            308,
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Privacy Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/privacy-policy",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": true,
+          "address": true,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 308
+        },
+        "bot": {
+          "initial": 308,
+          "final": 200,
+          "redirects": 1,
+          "finalUrl": "https://www.terracodedev.com/privacy-policy/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            308,
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Privacy Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/privacy-policy",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": true,
+          "address": true,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 308
+        },
+        "curl": {
+          "initial": 308,
+          "final": 200,
+          "redirects": 1,
+          "finalUrl": "https://www.terracodedev.com/privacy-policy/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            308,
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Privacy Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/privacy-policy",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": true,
+          "address": true,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 308
+        }
+      }
+    },
+    {
+      "path": "/refund-policy",
+      "allowed": true,
+      "inSitemap": true,
+      "tests": {
+        "browser": {
+          "initial": 308,
+          "final": 200,
+          "redirects": 1,
+          "finalUrl": "https://www.terracodedev.com/refund-policy/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            308,
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Refund Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/refund-policy",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": true,
+          "address": true,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 308
+        },
+        "googlebot": {
+          "initial": 308,
+          "final": 200,
+          "redirects": 1,
+          "finalUrl": "https://www.terracodedev.com/refund-policy/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            308,
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Refund Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/refund-policy",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": true,
+          "address": true,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 308
+        },
+        "bot": {
+          "initial": 308,
+          "final": 200,
+          "redirects": 1,
+          "finalUrl": "https://www.terracodedev.com/refund-policy/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            308,
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Refund Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/refund-policy",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": true,
+          "address": true,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 308
+        },
+        "curl": {
+          "initial": 308,
+          "final": 200,
+          "redirects": 1,
+          "finalUrl": "https://www.terracodedev.com/refund-policy/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            308,
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Refund Policy | Terracode",
+          "canonical": "https://www.terracodedev.com/refund-policy",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": true,
+          "address": true,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 308
+        }
+      }
+    },
+    {
+      "path": "/policies/service-level-agreement-sla",
+      "allowed": true,
+      "inSitemap": false,
+      "tests": {
+        "browser": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/service-level-agreement-sla",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Service Level Agreement (SLA) | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/service-level-agreement-sla.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "googlebot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/service-level-agreement-sla",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Service Level Agreement (SLA) | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/service-level-agreement-sla.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "bot": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/service-level-agreement-sla",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Service Level Agreement (SLA) | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/service-level-agreement-sla.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        },
+        "curl": {
+          "initial": 200,
+          "final": 200,
+          "redirects": 0,
+          "finalUrl": "https://www.terracodedev.com/policies/service-level-agreement-sla",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Service Level Agreement (SLA) | Terracode",
+          "canonical": "https://www.terracodedev.com/policies/service-level-agreement-sla.html",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": false,
+          "phone": false,
+          "address": false,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 200
+        }
+      }
+    },
+    {
+      "path": "/terms-and-conditions",
+      "allowed": true,
+      "inSitemap": true,
+      "tests": {
+        "browser": {
+          "initial": 308,
+          "final": 200,
+          "redirects": 1,
+          "finalUrl": "https://www.terracodedev.com/terms-and-conditions/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            308,
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Terms and Conditions | Terracode",
+          "canonical": "https://www.terracodedev.com/terms-and-conditions",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": true,
+          "address": true,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 308
+        },
+        "googlebot": {
+          "initial": 308,
+          "final": 200,
+          "redirects": 1,
+          "finalUrl": "https://www.terracodedev.com/terms-and-conditions/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            308,
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Terms and Conditions | Terracode",
+          "canonical": "https://www.terracodedev.com/terms-and-conditions",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": true,
+          "address": true,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 308
+        },
+        "bot": {
+          "initial": 308,
+          "final": 200,
+          "redirects": 1,
+          "finalUrl": "https://www.terracodedev.com/terms-and-conditions/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            308,
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Terms and Conditions | Terracode",
+          "canonical": "https://www.terracodedev.com/terms-and-conditions",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": true,
+          "address": true,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 308
+        },
+        "curl": {
+          "initial": 308,
+          "final": 200,
+          "redirects": 1,
+          "finalUrl": "https://www.terracodedev.com/terms-and-conditions/",
+          "contentType": "text/html; charset=utf-8",
+          "statuses": [
+            308,
+            200
+          ],
+          "challenge": false,
+          "noindex": false,
+          "title": "Terms and Conditions | Terracode",
+          "canonical": "https://www.terracodedev.com/terms-and-conditions",
+          "canonicalMatchesFinal": false,
+          "description": true,
+          "og": true,
+          "robotsMeta": true,
+          "text": true,
+          "company": true,
+          "email": true,
+          "phone": true,
+          "address": true,
+          "schema": false,
+          "server": "cloudflare",
+          "headStatus": 200,
+          "headInitial": 308
+        }
+      }
+    }
+  ],
+  "failures": [
+    {
+      "path": "/",
+      "agent": "browser",
+      "reasons": [
+        "content requires JavaScript",
+        "metadata incomplete",
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/",
+      "agent": "googlebot",
+      "reasons": [
+        "content requires JavaScript",
+        "metadata incomplete",
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/",
+      "agent": "bot",
+      "reasons": [
+        "content requires JavaScript",
+        "metadata incomplete",
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/",
+      "agent": "curl",
+      "reasons": [
+        "content requires JavaScript",
+        "metadata incomplete",
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/contact",
+      "agent": "browser",
+      "reasons": [
+        "content requires JavaScript",
+        "metadata incomplete",
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/contact",
+      "agent": "googlebot",
+      "reasons": [
+        "content requires JavaScript",
+        "metadata incomplete",
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/contact",
+      "agent": "bot",
+      "reasons": [
+        "content requires JavaScript",
+        "metadata incomplete",
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/contact",
+      "agent": "curl",
+      "reasons": [
+        "content requires JavaScript",
+        "metadata incomplete",
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/payments",
+      "agent": "browser",
+      "reasons": [
+        "content requires JavaScript",
+        "metadata incomplete",
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/payments",
+      "agent": "googlebot",
+      "reasons": [
+        "content requires JavaScript",
+        "metadata incomplete",
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/payments",
+      "agent": "bot",
+      "reasons": [
+        "content requires JavaScript",
+        "metadata incomplete",
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/payments",
+      "agent": "curl",
+      "reasons": [
+        "content requires JavaScript",
+        "metadata incomplete",
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/t&s",
+      "agent": "browser",
+      "reasons": [
+        "content requires JavaScript"
+      ]
+    },
+    {
+      "path": "/t&s",
+      "agent": "googlebot",
+      "reasons": [
+        "content requires JavaScript"
+      ]
+    },
+    {
+      "path": "/t&s",
+      "agent": "bot",
+      "reasons": [
+        "content requires JavaScript"
+      ]
+    },
+    {
+      "path": "/t&s",
+      "agent": "curl",
+      "reasons": [
+        "content requires JavaScript"
+      ]
+    },
+    {
+      "path": "/policies/cookie-policy",
+      "agent": "browser",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/cookie-policy",
+      "agent": "googlebot",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/cookie-policy",
+      "agent": "bot",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/cookie-policy",
+      "agent": "curl",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/data-processing-agreement-dpa",
+      "agent": "browser",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/data-processing-agreement-dpa",
+      "agent": "googlebot",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/data-processing-agreement-dpa",
+      "agent": "bot",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/data-processing-agreement-dpa",
+      "agent": "curl",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/disclaimer-policy",
+      "agent": "browser",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/disclaimer-policy",
+      "agent": "googlebot",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/disclaimer-policy",
+      "agent": "bot",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/disclaimer-policy",
+      "agent": "curl",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/end-user-license-agreement-eula",
+      "agent": "browser",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/end-user-license-agreement-eula",
+      "agent": "googlebot",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/end-user-license-agreement-eula",
+      "agent": "bot",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/end-user-license-agreement-eula",
+      "agent": "curl",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/privacy-policy",
+      "agent": "browser",
+      "reasons": [
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/privacy-policy",
+      "agent": "googlebot",
+      "reasons": [
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/privacy-policy",
+      "agent": "bot",
+      "reasons": [
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/privacy-policy",
+      "agent": "curl",
+      "reasons": [
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/refund-policy",
+      "agent": "browser",
+      "reasons": [
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/refund-policy",
+      "agent": "googlebot",
+      "reasons": [
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/refund-policy",
+      "agent": "bot",
+      "reasons": [
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/refund-policy",
+      "agent": "curl",
+      "reasons": [
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/policies/service-level-agreement-sla",
+      "agent": "browser",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/service-level-agreement-sla",
+      "agent": "googlebot",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/service-level-agreement-sla",
+      "agent": "bot",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/policies/service-level-agreement-sla",
+      "agent": "curl",
+      "reasons": [
+        "canonical does not match served URL",
+        "canonical missing from sitemap"
+      ]
+    },
+    {
+      "path": "/terms-and-conditions",
+      "agent": "browser",
+      "reasons": [
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/terms-and-conditions",
+      "agent": "googlebot",
+      "reasons": [
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/terms-and-conditions",
+      "agent": "bot",
+      "reasons": [
+        "canonical does not match served URL"
+      ]
+    },
+    {
+      "path": "/terms-and-conditions",
+      "agent": "curl",
+      "reasons": [
+        "canonical does not match served URL"
+      ]
+    }
+  ]
+}

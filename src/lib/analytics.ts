@@ -1,6 +1,13 @@
 const GA_MEASUREMENT_ID = "G-Z72SZF3K62";
+let initialized = false;
+
+export function hasAnalyticsConsent(): boolean {
+  try { return localStorage.getItem('cookie-consent') === 'accepted'; }
+  catch { return false; }
+}
 
 export function initGA(): void {
+  if (initialized || !hasAnalyticsConsent()) return;
   if (!GA_MEASUREMENT_ID) {
     console.warn('VITE_GA_MEASUREMENT_ID is not set');
     return;
@@ -10,6 +17,7 @@ export function initGA(): void {
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
   document.head.appendChild(script);
+  initialized = true;
 
   window.dataLayer = window.dataLayer || [];
 
@@ -28,6 +36,7 @@ export function initGA(): void {
 }
 
 export function trackPageView(path: string, title?: string): void {
+  if (!hasAnalyticsConsent()) return;
   window.gtag?.('event', 'page_view', {
     page_path: path,
     page_title: title ?? document.title,
@@ -35,6 +44,7 @@ export function trackPageView(path: string, title?: string): void {
 }
 
 export function trackEvent(name: string, params?: Record<string, unknown>): void {
+  if (!hasAnalyticsConsent()) return;
   window.gtag?.('event', name, params);
 }
 

@@ -11,15 +11,22 @@ const directory = join('public', 'policies')
 await mkdir(directory, { recursive: true })
 const h = React.createElement
 const slug = (title) => title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')
-const { rewrites } = JSON.parse(await readFile('vercel.json', 'utf8'))
-const url = (article) => {
-  const file = `/policies/${slug(article.title)}.html`
-  return rewrites.find((rule) => rule.destination === file)?.source ?? file
-}
+const policyRoutes = JSON.parse(await readFile('src/data/policy-routes.json', 'utf8'))
+const business = JSON.parse(await readFile('src/data/business.json', 'utf8'))
+const url = (article) => policyRoutes[slug(article.title)]
+const schema = JSON.stringify({
+  '@context': 'https://schema.org', '@type': 'Organization',
+  name: business.name, url: business.url, email: business.email, telephone: business.telephone,
+  address: { '@type': 'PostalAddress', streetAddress: business.streetAddress,
+    addressLocality: business.addressLocality, addressCountry: business.addressCountry },
+  contactPoint: { '@type': 'ContactPoint', contactType: 'customer support',
+    email: business.email, telephone: business.telephone },
+}).replaceAll('<', '\\u003c')
 const policyMeta = [
   ['privacy-policy', '/privacy-policy'],
   ['terms-of-service', '/terms-and-conditions'],
   ['refund-policy', '/refund-policy'],
+  ['end-user-license-agreement', policyRoutes['end-user-license-agreement-eula']],
 ].map(([name, path]) => `<meta name="${name}" content="https://www.terracodedev.com${path}">`).join('')
 const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
@@ -48,13 +55,12 @@ function PolicyPage({ article }) {
 const css = `*{box-sizing:border-box}body{margin:0;background:#000;color:#fff;font-family:Arial,sans-serif}a{color:inherit;text-decoration:none}a:hover{text-decoration:underline;color:#fda10a}header{max-width:1280px;margin:40px auto 0;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}header img{width:102px;height:65px;object-fit:cover}header nav{display:flex;flex-wrap:wrap;gap:24px;color:#aaa}main{max-width:1280px;margin:40px auto 80px;padding:48px 24px;display:grid;grid-template-columns:2fr 1fr;gap:40px}article h1{font-size:45px;color:#fda10a;font-weight:400;margin:0 0 24px}article h2{font-size:30px;font-weight:400;margin:32px 0 16px}article h3{font-size:24px;font-weight:400;margin:16px 0}article p{font-size:22px;color:#a4a4a4;line-height:1.5;margin:12px 0}.date{color:#a4a4a4;font-size:22px}aside h2{font-size:30px;color:#fda10a;text-align:center;font-weight:400;margin:0 0 24px}.card{display:block;background:#171717;border-radius:16px;padding:16px;margin:0 0 24px}.card h3{font-size:24px;color:#fda10a;font-weight:400;margin:0 0 8px}.card p{font-size:20px;color:#a4a4a4;line-height:1.4}.card span{color:#fda10a}footer{background:#262626;padding:24px 40px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}footer nav{display:flex;gap:24px;flex-wrap:wrap;text-decoration:underline}@media(max-width:800px){header{flex-direction:column}header nav{justify-content:center}main{grid-template-columns:1fr;padding:24px}article h1{font-size:32px}article p{font-size:18px}}`
 
 for (const article of articlesData) {
-  const filename = `${slug(article.title)}.html`
   const title = escapeHtml(`${article.title === 'Terms & Conditions' ? 'Terms and Conditions' : article.title} | Terracode`)
   const isPrivacyPolicy = slug(article.title) === 'privacy-policy'
   const description = escapeHtml(isPrivacyPolicy
     ? 'Learn how Terracode collects, uses, stores and protects personal data, your privacy rights, and how to contact us about data protection.'
     : article.description)
-  const socialMeta = isPrivacyPolicy ? [
+  const socialMeta = isPrivacyPolicy || slug(article.title) === 'end-user-license-agreement-eula' ? [
     '<meta property="og:site_name" content="Terracode">',
     '<meta property="og:image" content="https://www.terracodedev.com/logo.png">',
     '<meta property="og:image:alt" content="Terracode logo">',
@@ -66,14 +72,8 @@ for (const article of articlesData) {
   ].join('') : ''
   const canonical = `https://www.terracodedev.com${url(article)}`
   const html = `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title}</title><meta name="description" content="${description}"><meta name="robots" content="index, follow">${policyMeta}<link rel="canonical" href="${canonical}"><meta property="og:type" content="website"><meta property="og:title" content="${title}"><meta property="og:description" content="${description}"><meta property="og:url" content="${canonical}"><style>${css}</style></head><body>${renderToStaticMarkup(h(PolicyPage, { article }))}</body></html>`
-  const document = html.replace('<style>', `${socialMeta}<style>`)
-  await writeFile(join(directory, filename), document)
-  // Serve canonical URLs on static hosts that do not read vercel.json.
-  // Vite copies these directory indexes into dist during the build.
-  const canonicalPath = url(article)
-  if (!canonicalPath.startsWith('/policies/')) {
-    const canonicalDirectory = join('public', canonicalPath.slice(1))
-    await mkdir(canonicalDirectory, { recursive: true })
-    await writeFile(join(canonicalDirectory, 'index.html'), document)
-  }
+  const document = html.replace('<style>', `${socialMeta}<script type="application/ld+json">${schema}</script><style>`)
+  // One document per policy. Cloudflare serves *.html at extensionless URLs.
+  // Vercel's explicit rewrites serve the same canonical paths.
+  await writeFile(join('public', `${url(article).slice(1)}.html`), document)
 }

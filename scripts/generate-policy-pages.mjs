@@ -66,5 +66,14 @@ for (const article of articlesData) {
   ].join('') : ''
   const canonical = `https://www.terracodedev.com${url(article)}`
   const html = `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title}</title><meta name="description" content="${description}"><meta name="robots" content="index, follow">${policyMeta}<link rel="canonical" href="${canonical}"><meta property="og:type" content="website"><meta property="og:title" content="${title}"><meta property="og:description" content="${description}"><meta property="og:url" content="${canonical}"><style>${css}</style></head><body>${renderToStaticMarkup(h(PolicyPage, { article }))}</body></html>`
-  await writeFile(join(directory, filename), html.replace('<style>', `${socialMeta}<style>`))
+  const document = html.replace('<style>', `${socialMeta}<style>`)
+  await writeFile(join(directory, filename), document)
+  // Serve canonical URLs on static hosts that do not read vercel.json.
+  // Vite copies these directory indexes into dist during the build.
+  const canonicalPath = url(article)
+  if (!canonicalPath.startsWith('/policies/')) {
+    const canonicalDirectory = join('public', canonicalPath.slice(1))
+    await mkdir(canonicalDirectory, { recursive: true })
+    await writeFile(join(canonicalDirectory, 'index.html'), document)
+  }
 }
